@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://invenflow.strikingly.com/ -->
+<html itemscope="" itemtype="http://schema.org/WebPage" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" class="" static="yes" data-ember-extension="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./i3_files/beacon.js" async=""></script><script type="text/javascript" async="" src="./i3_files/keen-2.1.0-min.js"></script><script type="text/javascript" async="" src="./i3_files/ga.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"74f55de04c","applicationID":"272304","transactionName":"IlcLQxBeWFoHShYTWAZdFhgRWVtBPUtNAk0IWw==","queueTime":29,"applicationTime":54,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQcOWVBACgQCV1FW"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+
+
+<title>Invenflow</title>
+<script phantom="keep">
+window.$S = {};$S.global_conf={"environment":"production","host_suffix":"strikingly.com","SEGMENTIO_API_KEY":"eb3txa37hi","FACEBOOK_APP_ID":"138736959550286","BOBCAT_ANALYTICS_POST_URL":"//stats.b.strikingly.com","locale":"en","in_china":false,"browser_locale":"en"};$S.conf={"pages_show_static_path":"//assets.strikingly.com/assets/pages_show_static-b1381fd221df736dfae5616cee9a2d7b.js","keenio_collection":"strikingly_pageviews","keenio_pbs_impression_collection":"strikingly_pbs_impression","keenio_pbs_conversion_collection":"strikingly_pbs_conversion","keenio_pageservice_imageshare_collection":"strikingly_pageservice_imageshare","headless_render":true};$S.page_meta={"id":208399,"permalink":"invenflow","created_at":"2014-06-05T08:57:57-07:00","user":{"membership":"free","id":168397},"category":null,"social_media_config":{"url":"http://invenflow.com/","title":"Invenflow's Site","image":"http://assets.strikingly.com/assets/fb_images/default.png","description":null,"fb_app_id":"138736959550286"},"keenio_config":{"keenio_project_id":"5317e03605cd66236a000002","keenio_write_key":"efd460f8e282891930ff1957321c12b64a6db50694fd0b4a01d01f347920dfa3ce48e8ca249b5ea9917f98865696cfc39bc6814e4743c39af0a4720bb711627d9cf0fe63d5d52c3866c9c1c3178aaec6cbfc1a9ab62a3c9a827d2846a9be93ecf4ee3d61ebee8baaa6a1d735bff6e37b"},"show_strikingly_logo":true,"show_navigation_buttons":false,"slide_names":["Invenflow","What we offer","What we do","Buy from us","\"Global Products\"","Quote","Register","Sell through us","About us"],"social_media":{"type":"SocialMediaList","id":null,"link_list":[],"button_list":[{"type":"Facebook","id":null,"url":"","link_url":"","share_text":null,"app_id":"138736959550286","show_button":false},{"type":"Twitter","id":null,"url":"","link_url":"","share_text":"Saw an awesome one pager. Check it out @Strikingly","show_button":false},{"type":"GPlus","id":null,"url":"","link_url":"","share_text":null,"show_button":false},{"type":"LinkedIn","id":null,"url":"","link_url":"","share_text":null,"show_button":false}]},"has_optimizely":false,"optimizely_experiment_id":null,"theme":{"name":"pitch_new"},"services":[],"strk_upvt":"NEdPdmFZbXl6cytsbm9majRRdndCMXlEeFdwbUJ1NGZReDgxckpqZ3kvbmNGcENJOHVsM1ZiY29pa3p5Q3pEb2tLK0ZkNmQ5YXNNb08zQnY3UitTcFByRTVFMUdnTWFmYWsvNDVnaGgxdkdOM0x6ZWhqa0hXaDIwcW5Jbzl6U1AyUXNNWEYxeVgzN2FYRFFpOGFrSHV3PT0tLXhocUJENTM3a1RneENHQ3Zrdm83MFE9PQ==--dedd12aee9d89bb2bf2c911aa4b34e27cfac04eb"};
+</script>
+
+<meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
+<link href="./i3_files/css" media="screen" rel="stylesheet" type="text/css">
+<link href="./i3_files/main_show-bba2d859e840b5e32c3b932502d57f89.css" media="screen" rel="stylesheet" type="text/css"><link href="./i3_files/css(1)" media="screen" rel="stylesheet" type="text/css">
+<link href="http://assets.strikingly.com/assets/fb_images/default.png" rel="apple-touch-icon" sizes="60x60">
+<link href="http://assets.strikingly.com/assets/fb_images/default.png" rel="apple-touch-icon" sizes="76x76">
+<link href="http://assets.strikingly.com/assets/fb_images/default.png" rel="apple-touch-icon" sizes="120x120">
+<link href="http://assets.strikingly.com/assets/fb_images/default.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Invenflow&#39;s Site" property="og:title">
+<meta content="http://invenflow.com/" property="og:url">
+<meta content="http://assets.strikingly.com/assets/fb_images/default.png" property="og:image">
+<meta content="Invenflow&#39;s Site" property="og:site_name">
+<meta property="og:description">
+<meta content="Invenflow&#39;s Site" itemprop="name">
+<meta itemprop="description">
+<meta content="http://assets.strikingly.com/assets/fb_images/default.png" itemprop="image">
+<meta content="summary" name="twitter:card">
+<meta content="Invenflow&#39;s Site" name="twitter:title">
+<meta content="" name="twitter:description">
+<meta content="http://assets.strikingly.com/assets/fb_images/default.png" name="twitter:image">
+<meta name="description">
+<meta name="keywords">
+<meta content="//assets.strikingly.com" name="asset-url">
+<meta content="strikingly.com" name="strikingly-host-suffix">
+<meta name="mode">
+<meta content="{&quot;permalink&quot;:&quot;invenflow&quot;,&quot;id&quot;:208399}" name="support-helper">
+<meta content="pitch_slider2" name="premium-slides">
+<meta content="{}" name="site-configs">
+<link href="./i3_files/i3.html" rel="canonical">
+
+
+<script phantom="keep">
+if (!console) var console = {
+log: function() {},
+warn: function() {},
+error: function() {}
+};
+isHeadlessRendering = function() {
+return ($S.conf.headless_render && document.getElementsByTagName('html')[0].getAttribute('static') != 'yes');
+}
+var _gaq = _gaq || [];
+if (!isHeadlessRendering() && !$S.conf.is_screenshot_rendering) {
+/* load errorception */
+var _errs=["518ac810441fb4b7180002fa"];(function(a,b){a.onerror=function(){_errs.push(arguments)};
+var d=function(){var a=b.createElement("script"),c=b.getElementsByTagName("script")[0];
+a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
+c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
+a.attachEvent("onload",d)})(window,document);
+_gaq.push(['_setAccount', 'UA-25124444-6']);
+_gaq.push(['_setDomainName', 'strikingly.com']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+// configuration for keen.io
+var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+
+// Configure the Keen object with your Project ID and (optional) access keys.
+Keen.configure({
+projectId: $S.page_meta.keenio_config.keenio_project_id,
+writeKey: $S.page_meta.keenio_config.keenio_write_key // required for sending events
+});
+}
+
+
+</script><style type="text/css"></style>
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style><style type="text/css"></style><style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+<body class="show" id="pages" spellcheck="false" style="zoom: 1;" ontouchstart="" screen_capture_injected="true" cz-shortcut-listen="true"><script phantom="keep" src="./i3_files/jquery.min.js" type="text/javascript"></script>
+<script phantom="keep">
+window.jQuery || document.write('<script src="//assets.strikingly.com/assets/jquery-f3d3cb311468a7614360e65eb4b797d9.js"><\/script>')
+</script>
+
+
+
+
+<script src="./i3_files/main_static-1fc30aebfb49af1949066d52a5685e6f.js" type="text/javascript"></script>
+
+
+<div class="" id="s-content">
+<div class="navigator fixed" data-bind-page="visible: showNav()" id="s-nav" style="top: 0px;">
+<ul class="s-nav" data-bind-page="style: (bodyFont &amp;&amp; bodyFont() !== &#39;&#39;) ? {fontFamily: bodyFont()  } : {fontFamily : &#39;inherit&#39;}" style="font-family: inherit; ">
+<span data-bind-page="template: {name:&#39;navbarItemTemplate&#39;, foreach: slides}"><!----><li> <a class="s-nav-item selected" href="#invenflow">Invenflow</a> </li><!----><li> <a class="s-nav-item" href="#what-we-offer">What we offer</a> </li><!----><li style="display: none; "> <a class="s-nav-item" href="#what-we-do">What we do</a> </li><!----><li> <a class="s-nav-item" href="#buy-from-us">Buy from us</a> </li><!----><li style="display: none; "> <a class="s-nav-item" href="#global-products">"Global Products"</a> </li><!----><li style="display: none; "> <a class="s-nav-item" href="#quote">Quote</a> </li><!----><li> <a class="s-nav-item" href="#register">Register</a> </li><!----><li> <a class="s-nav-item" href="#sell-through-us">Sell through us</a> </li><!----><li> <a class="s-nav-item" href="#about-us">About us</a> </li></span>
+<span data-bind-page="template: {name:&#39;navbarLinkTemplate&#39;, foreach: submenu.list}"><li> <a href="http://www.wordpress.com/" target="_blank">Blog</a> </li></span>
+</ul>
+</div>
+
+
+
+<ul class="slides">
+<li class="slide selected">
+<a class="section-anchor" data-scroll-name="#1"></a>
+<a class="section-name-anchor" data-section-name="Invenflow"></a>
+<div class="wide gray" style="padding-top: 93px; padding-bottom: 93px;">
+<div class="container">
+<div class="sixteen columns">
+<div class="media" data-bind="visible: media1.hasContentOrIsEditMode()">
+<div class="media1 content"><div class="content">
+<div class="video-content" data-bind="visible: media1.showVideo()" style="display:none;">
+<div class="player" data-bind="html: media1.video.parent ? (media1.video.parent.showImage() ? &#39;&#39; : media1.video.html) : media1.video.html "></div>
+</div>
+<div class="image-content" data-bind="visible: media1.showImage()" style="">
+<a class="image-link" data-bind="attr: {href: media1.image.link(), target: media1.image.target() }" href="javascript:void(0);" target="_self">
+<img alt="" data-bind="attr: { &#39;class&#39;: &#39;lazy lazy-img&#39;, &#39;data-original&#39;: media1.image.assetUrl, alt: media1.image.caption, title: media1.image.caption }" src="./i3_files/oyt4v5uzrsixvzeitw1y.png" class="lazy-img" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/oyt4v5uzrsixvzeitw1y.png" title="" style="position: relative;">
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sixteen columns">
+<h1 class="title large" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div><span style="font-size: 60%;">Upto 80% off trade prices.</span></div></div></div>
+</h1>
+<h4 class="subtitle"><div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Inventory for smart retailers.</div></div></div></h4>
+<div class="cta-button">
+<div class="button1 content"><a class="button-component" data-bind="attr: { href: button1.url, target: button1.target() }, text: button1.text, visible: button1.hasContent()" data-component="button" href="#register" target="_self">BUY FROM US</a>
+</div>
+<div class="line s-line1"></div>
+<div class="line s-line2"></div>
+<div class="line s-line3"></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#2"></a>
+<a class="section-name-anchor" data-section-name="What we offer"></a>
+<div class="wide image resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background1.getSelectedClassName(), &#39;style&#39;: background1.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true, &#39;no-background&#39;: !background1.hasContent()}, &#39;attr&#39;: {&#39;data-background&#39;: background1.assetUrl()}" style="padding-top: 29px; padding-bottom: 30px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/olf8wisc0xcm6lo75mrp.jpg); background-size: cover; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/olf8wisc0xcm6lo75mrp.jpg">
+
+<div class="container">
+<div class="clearfix">
+<div class="sixteen columns" data-bind="visible: text1.hasContentOrIsEditMode() || text2.hasContentOrIsEditMode()">
+<h1 class="title" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Choose from thousands of branded products</div></div></div>
+</h1>
+<h4 class="subtitle" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>From a single carton to multiple containers</div></div></div>
+</h4>
+</div>
+</div>
+<div class="market_box_bg_list s-mh">
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;market_box_bg&#39;
+      }, sortableRepeatable: repeatable1.list"><!----><div class="five columns no-float repeatable">  <div class="market_box_bg fadeInUp s-mhi s-edit-dark" style="height: 215px; opacity: 0;"> <h3 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Save upto 80% on trade pricing</div></div></h3> <h4 data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div><strong>&nbsp;</strong></div></div></h4> </div> </div><!----><div class="five columns no-float repeatable">  <div class="market_box_bg fadeInUp s-mhi s-edit-dark" style="height: 215px; opacity: 0;"> <h3 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Make upto 80% margin</div></div></h3> <h4 data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div><strong>&nbsp;</strong></div></div></h4> </div> </div><!----><div class="five columns no-float repeatable">  <div class="market_box_bg fadeInUp s-mhi s-edit-dark" style="height: 215px; opacity: 0;"> <h3 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Cheaper than buying direct from Asia</div></div></h3> <h4 data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div><strong>&nbsp;</strong></div></div></h4> </div> </div></div>
+</div>
+<div class="clearfix">
+<div class="sixteen columns" data-bind="visible: text3.hasContentOrIsEditMode()">
+<h4 class="subtitle bottom">
+<div data-component="text" data-name="text3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text3.isState(&#39;editor&#39;) || !text3.hasContent()), htmlValue: text3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Branded products - upto 80% off the regular trade price</div></div></div>
+</h4>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#3"></a>
+<a class="section-name-anchor" data-section-name="What we do"></a>
+<div class="wide" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="container">
+<div class="clearfix">
+<div class="sixteen columns">
+<h1 class="title" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>InvenFlow</div></div></div>
+</h1>
+<h4 class="subtitle" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>We partner with manufacturers and distributors around the world to deliver the most competitive pricing on branded products.</div></div></div>
+</h4>
+</div>
+</div>
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;text_block&#39;
+      }, sortableRepeatable: repeatable1.list"><!----><div class="row repeatable">  <div class="sixteen columns"> <br> <h1 class="title fadeInUp text-component" data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" style="opacity: 0;"><div class="content content2" style="font-family: inherit; "><div>Save upto 80%</div></div></h1> <h4 class="subtitle fadeInUp text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" style="opacity: 0;"><div class="content content2" style="font-family: inherit; "><div>&nbsp;We save upto 80% on regular trade pricing, by bringing you one off deals on branded inventory.</div>
+<div>
+<br>Prices are often lower than the cost of an unbranded product from Asia, without having to commit to containers of product.</div>
+<div>&nbsp;</div>
+<div>Maintain upto 80% margin, where regular distributors expect you to make between 5% and 20%.</div>
+<div>&nbsp;</div>
+<p>Once products are gone, that's usually it. Which means you can control market prices.</p></div></h4> </div> </div></div>
+</div>
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#4"></a>
+<a class="section-name-anchor" data-section-name="Buy from us"></a>
+<div class="wide gray" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="container">
+<div class="clearfix">
+<div class="sixteen columns" data-bind="visible: text1.hasContentOrIsEditMode() || text2.hasContentOrIsEditMode()">
+<h1 class="title" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Buy from us</div></div></div>
+</h1>
+<h4 class="subtitle" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Email our team, or register your details below to start trading. One of our traders will then give you a call.</div></div></div>
+</h4>
+</div>
+</div>
+<div class="market_box_list s-mh">
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;market_box&#39;
+      }, sortableRepeatable: repeatable1.list"><!----><div class="five columns no-float repeatable">  <div class="market_box fadeInUp s-mhi s-edit-dark" style="height: 86px; opacity: 0;"> <h3 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>E-mail</div></div></h3> <h4 data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>sales@invenflow.com</div></div></h4> </div> </div><!----><div class="five columns no-float repeatable">  <div class="market_box fadeInUp s-mhi s-edit-dark" style="height: 86px; opacity: 0;"> <h3 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Online</div></div></h3> <h4 data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Coming soon...</div></div></h4> </div> </div><!----><div class="five columns no-float repeatable">  <div class="market_box fadeInUp s-mhi s-edit-dark" style="height: 86px; opacity: 0;"> <h3 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Phone</div></div></h3> <h4 data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Coming soon...</div></div></h4> </div> </div></div>
+</div>
+<div class="clearfix">
+<div class="sixteen columns" data-bind="visible: text3.hasContentOrIsEditMode()">
+<h4 class="subtitle bottom" data-bind="visible: text3.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text3.isState(&#39;editor&#39;) || !text3.hasContent()), htmlValue: text3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>We accept payment by Credit Card, Debit Card, Paypal and Bank Transfer.</div>
+<div>&nbsp;</div>
+<div>Goods are then delivered straight to your store or warehouse as you request.</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div></div></div>
+</h4>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#5"></a>
+<a class="section-name-anchor" data-section-name="&quot;Global Products&quot;"></a>
+<div class="wide image slogan resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background1.getSelectedClassName(), &#39;style&#39;: background1.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true, &#39;no-background&#39;: !background1.hasContent()}, &#39;attr&#39;: {&#39;data-background&#39;: background1.assetUrl()}" style="padding-top: 244px; padding-bottom: 245px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/d2kcjjbeykqicyt2pra2.jpg); background-size: cover; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/d2kcjjbeykqicyt2pra2.jpg">
+<div class="container">
+<div class="sixteen columns" data-bind="visible:text1.hasContentOrIsEditMode()">
+<h1 class="fadeInUp" style="opacity: 0;">
+<div data-component="text" data-name="text1" data-text-type="title" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.titleFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.titleFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Global products</div></div></div>
+</h1>
+<div class="line fadeInUp" style="opacity: 0;"></div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#6"></a>
+<a class="section-name-anchor" data-section-name="Quote"></a>
+<div class="wide" style="padding-top: 190px; padding-bottom: 190px;">
+<div class="container">
+<div class="clearfix">
+<div class="sixteen columns">
+<h1 class="title" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>"InvenFlow helped us to deliver high margins in an incredibly competitive retail environment"</div></div></div>
+</h1>
+<h4 class="subtitle" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div style="text-align: right;">Online mobile accessory store</div></div></div>
+</h4>
+</div>
+</div>
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;text_block&#39;
+      }, sortableRepeatable: repeatable1.list"></div>
+</div>
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#7"></a>
+<a class="section-name-anchor" data-section-name="Register"></a>
+<div class="wide image resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background1.getSelectedClassName(), &#39;style&#39;: background1.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true, &#39;no-background&#39;:!background1.hasContent(), gray:!background1.hasContent()}, &#39;attr&#39;: {&#39;data-background&#39;: background1.assetUrl()}" style="padding-top: 48px; padding-bottom: 48px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/edy9btx7quq3tbb34iwb.jpg); background-size: cover; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/edy9btx7quq3tbb34iwb.jpg">
+<div class="container">
+<div class="sixteen columns">
+<h1 class="title"><div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Register with us</div></div></div></h1>
+<h4 class="subtitle"><div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Share your contact details and one of our traders will give you a call.</div></div></div></h4>
+<div class="center s-template-form"><div class="email1 content"><form accept-charset="UTF-8" action="http://invenflow.strikingly.com/invenflow/collected_emails.jsm" class="new_collected_email" id="new_collected_email" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div><div class="inputs" data-bind="template: { name: &#39;emailFormTemplate&#39;, data: email1}"><!-- you can use the following methods --> <!-- isNameEmpty() --> <!-- isEmailInvalid() --> <!-- isSuccess() --> <!-- isError() --> <div class="email-form-pitch"> <div class="clearfix s-form-not-success"> <div class="six columns offset-two alpha"> <div class="input"> <label for="collected_email[name]">Name</label> <input name="collected_email[name]" type="text"> <div class="hint s-form-error-name" style="display: none; "> Enter your name please </div> </div> </div> <div class="six columns omega"> <div class="input"> <label for="collected_email[email]">Email</label> <input name="collected_email[email]" type="email"> <div class="hint s-form-error-email" style="display: none; "> Invalid email </div> </div> </div> <div class="twelve columns offset-two alpha"> <div class="input"> <label for="collected_email[comment]">Phone Number, Trading Name</label> <textarea name="collected_email[comment]" rows="6"></textarea> </div> </div> </div> <div class="submit-button s-form-not-success"> <a class="button-component s-form-click">Submit</a> </div> <div class="text center" data-bind-page="style: (bodyFont &amp;&amp; bodyFont() !== &#39;&#39;) ? {fontFamily: bodyFont()  } : {fontFamily : &#39;inherit&#39;}"> <div class="hint s-form-submit-message s-form-success" style="display: none; ">
+<a href="https://www.strikingly.com/?ref=u_form&utm_campaign=contact_form_pbs&utm_content=http%3A%2F%2Finvenflow.strikingly.com%2F&utm_medium=user_page&utm_source=contact_form" target="_blank">
+We'll be in touch!
+<div class="img-wrapper">
+<img alt="Contact-form-brand" src="./i3_files/contact-form-brand-f1ef4df3a2d4cc7e8cfe62ee9cdf505c.png">
+</div>
+</a>
+</div> </div> </div></div>
+<input data-bind="value:email1.recipient" id="collected_email_recipient" name="collected_email[recipient]" type="hidden" value="info@invenflow.com">
+<input data-bind="value:email1.hide_email" id="collected_email_skip_email" name="collected_email[skip_email]" type="hidden" value="false">
+<input data-bind="value:email1.hide_name" id="collected_email_skip_name" name="collected_email[skip_name]" type="hidden" value="false">
+<div class="input" style="display:none;">
+<label class="outside">Comment</label>
+<label class="overlay">Comment</label>
+<input name="collected_email[_comment]" type="text">
+</div>
+</form>
+
+</div></div>
+</div>
+</div>
+
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#8"></a>
+<a class="section-name-anchor" data-section-name="Sell through us"></a>
+<div class="wide" style="padding-top: 170px; padding-bottom: 171px;">
+<div class="container">
+<div class="clearfix">
+<div class="sixteen columns">
+<h1 class="title" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Inventory to sell?</div></div></div>
+</h1>
+<h4 class="subtitle" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Contact info@invenflow.com to gain access to our network of trade buyers.</div>
+<div>&nbsp;<span>&nbsp;</span>
+</div>
+<div>Our approaches ensure inventory is dealt with in a sensitive and timely manner, to allow for the quick realisation of assets.</div></div></div>
+</h4>
+</div>
+</div>
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;text_block&#39;
+      }, sortableRepeatable: repeatable1.list"></div>
+</div>
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#9"></a>
+<a class="section-name-anchor" data-section-name="About us"></a>
+<div class="wide gray" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="container">
+<div class="clearfix">
+<div class="sixteen columns" data-bind="visible: text1.hasContentOrIsEditMode() || text2.hasContentOrIsEditMode()">
+<h1 class="title" data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>About us</div></div></div>
+</h1>
+<h4 class="subtitle" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>Managing global inventory for over 5 years</div></div></div>
+</h4>
+</div>
+</div>
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;team_member&#39;
+      }, sortableRepeatable: repeatable1.list"><!----><div class="four columns no-float repeatable">  <div class="team_member_box fadeInUp" style="opacity: 0;"> <div class="team_image s-mhi" data-asset-type="flat-circle-160-free" data-component="image" data-name="components.image1" data-use-url="true"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="javascript:void(0);" target="_self"> <img alt="" src="./i3_files/pduwtulckfpe8o6qo0xo.png" class="lazy-img" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_540,w_720/pduwtulckfpe8o6qo0xo.png" title="" style="position: relative;"> </a>  </div></div> <h4 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>About us</div></div></h4> <h5 class="position text-component" data-component="text" data-name="components.text2" data-text-type="heading" data-use-font="true"><div class="content content2" style="font-family: inherit; "><div>Team</div></div></h5> <h5 data-component="text" data-name="components.text3" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>&nbsp;</div>
+<div>The team at Invenflow has distributed well over 500,000 products, acting as a trusted supplier to an entire network of trade buyers, ranging from sole traders to multi-store chains.</div>
+<div>&nbsp;</div>
+<div>We've helped hundreds of brands around the world as a trusted channel for excess inventory in consumer electronics.</div>
+<div>&nbsp;</div>
+<div>Our team of traders are always on hand to meet your needs, answer questions and help process any orders.</div>
+<div>&nbsp;</div>
+<div>We have a dedicated team who run our seamless logistics operation, ensuring goods are dispatched by the box or pallet in a timely manner, right to your door.</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div></div></h5> <br> <br> </div> </div><!----><div class="four columns no-float repeatable">  <div class="team_member_box fadeInUp" style="opacity: 0;"> <div class="team_image s-mhi" data-asset-type="flat-circle-160-free" data-component="image" data-name="components.image1" data-use-url="true"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="javascript:void(0);" target="_self"> <img alt="" src="./i3_files/wtwpavi8pn0lsz8dy38b.png" class="lazy-img" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_540,w_720/wtwpavi8pn0lsz8dy38b.png" title="" style="position: relative;"> </a>  </div></div> <h4 data-component="text" data-name="components.text1" data-text-type="heading" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Pratik Shah</div></div></h4> <h5 class="position text-component" data-component="text" data-name="components.text2" data-text-type="heading" data-use-font="true"><div class="content content2" style="font-family: inherit; "><div>Founder</div></div></h5> <h5 data-component="text" data-name="components.text3" data-text-type="body" data-use-font="true" class="text-component"><div class="content content2" style="font-family: inherit; "><div>Pratik&nbsp;has run several e-commerce and distribution businesses in the past, and&nbsp;spotted how hard it was for small and large retailers alike to maintain good margins, often expected to make minuscule returns on their products.</div>
+<div>&nbsp;</div>
+<div>Yet he also realised that brands and distributors often end up with excess inventory, allowing for significant one-off savings on regular trade pricing.</div>
+<div>&nbsp;</div>
+<div>Putting the two together we formed Invenflow, supplying one-off trade deals on branded inventory, typically saving upto 80%, and allowing for significantly higher margins.</div>
+<div>&nbsp;</div></div></h5> <br> <br> </div> </div></div>
+</div>
+</div>
+
+
+
+</li>
+</ul>
+<div class="wide no-resize footer-container" data-bind-page="visible:showFooter" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="container">
+<div class="sixteen columns">
+<div id="footer">
+<div class="center" id="footer-social-media">
+<div class="socialMedia content"><div class="social-media-display">
+<ul class="links" data-bind="template: {name:&#39;socialMediaLinks&#39;, foreach: socialMedia.link_list }" style="clear:both;"></ul>
+<ul class="buttons" data-bind="html: socialMedia.mediaListHtml"></ul>
+</div>
+</div>
+</div>
+<h5 id="footer-text">
+<div data-component="text" data-name="copyright" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(copyright.isState(&#39;editor&#39;) || !copyright.hasContent()), htmlValue: copyright.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: inherit; "><div>© InvenFlow 2014. Garland Road, Stanmore, Middlesex. HA7 1NR.</div>
+<div>sales@invenflow.com</div></div></div>
+</h5>
+</div>
+</div>
+</div>
+</div>
+
+<div class="logo-footer" data-bind-page="visible: showStrikinglyLogo" id="strikingly-footer-logo" style="display: none;">
+<a class="logo-link" href="https://www.strikingly.com/?ref=logo&permalink=invenflow&custom_domain=&utm_campaign=footer_pbs&utm_content=http%3A%2F%2Finvenflow.strikingly.com%2F&utm_medium=user_page&utm_source=footer_logo&utm_term=pbs_v0" target="_blank">Powered by Strikingly - Mobile-friendly website in minutes</a>
+<div class="logo-hover"></div>
+<div class="logo-footer-tooltip">
+<div class="tooltip-container">
+<div class="tooltip-white">
+<span>Create your own website with Strikingly</span>
+</div>
+</div>
+</div>
+<div class="branding-info" id="brand-info" style="display: none">
+<a href="https://www.strikingly.com/?ref=u_form&utm_campaign=contact_form_pbs&utm_content=http%3A%2F%2Finvenflow.strikingly.com%2F&utm_medium=user_page&utm_source=contact_form" target="_blank">
+${thanksMessage}
+<div class="img-wrapper">
+<img alt="Contact-form-brand" src="./i3_files/contact-form-brand-f1ef4df3a2d4cc7e8cfe62ee9cdf505c.png">
+</div>
+</a>
+</div>
+</div>
+<div class="logo-footer-var2" id="strikingly-footer-logo-var2" style="display: none;">
+<a class="logo-link" href="https://www.strikingly.com/?ref=logo&permalink=invenflow&custom_domain=&utm_campaign=footer_pbs&utm_content=http%3A%2F%2Finvenflow.strikingly.com%2F&utm_medium=user_page&utm_source=footer_logo&utm_term=pbs_v2" target="_blank" title="Create your own website with Strikingly">
+&nbsp;
+</a>
+</div>
+<div class="logo-footer-var3" id="strikingly-footer-logo-var3" style="">
+<a class="logo-link" href="https://www.strikingly.com/?ref=logo&permalink=invenflow&custom_domain=&utm_campaign=footer_pbs&utm_content=http%3A%2F%2Finvenflow.strikingly.com%2F&utm_medium=user_page&utm_source=footer_logo&utm_term=pbs_v3" target="_blank" title="Create your own website with Strikingly">
+&nbsp;
+</a>
+</div>
+
+<div class="navigation-buttons strikingly-fixed" data-bind-page="visible: showNavigationButtons()" style="display: none; ">
+<span class="prev" data-bind-page="fadeVisible: !window.slide_navigator.isFirst(), mouseclick: window.slide_navigator.prev" title="Previous Section" style="display: block; visibility: visible; opacity: 0;"></span>
+<span class="next" data-bind-page="fadeVisible: !window.slide_navigator.isLast(), mouseclick: window.slide_navigator.next" title="Next Section" style="visibility: visible; opacity: 1;"></span>
+</div>
+
+<div class="navbar-drawer strikingly-drawer strikingly-nav-transition">
+<ul id="nav-drawer-list" style="height: 739px;">
+<span data-bind-page="template: {name:&#39;strikinglyNavbarTouchItemTemplate&#39;, foreach: slides}"><!----><li> <a class="navbar-drawer-item selected" href="http://invenflow.strikingly.com/#invenflow">Invenflow</a> </li><!----><li> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#what-we-offer">What we offer</a> </li><!----><li style="display: none; "> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#what-we-do">What we do</a> </li><!----><li> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#buy-from-us">Buy from us</a> </li><!----><li style="display: none; "> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#global-products">"Global Products"</a> </li><!----><li style="display: none; "> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#quote">Quote</a> </li><!----><li> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#register">Register</a> </li><!----><li> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#sell-through-us">Sell through us</a> </li><!----><li> <a class="navbar-drawer-item" href="http://invenflow.strikingly.com/#about-us">About us</a> </li></span>
+<span data-bind-page="template: {name:&#39;strikinglyNavbarTouchLinkTemplate&#39;, foreach: submenu.list}"><li> <a href="http://www.wordpress.com/" target="_blank">Blog</a> </li></span>
+<li class="logo" data-bind-page="visible: showStrikinglyLogo" id="strikingly-footer-logo">
+<a class="logo" href="https://www.strikingly.com/?ref=logo&permalink=invenflow&m=1" target="_blank">
+<div class="msg">Powered By</div>
+<img alt="Strikingly" src="./i3_files/logo-small-2-96cbb3c7a9de3441019cb3f437b760df.png" style="height:28px;">
+</a>
+</li>
+</ul>
+</div>
+<div class="navbar-drawer-bar strikingly-nav-transition" data-bind-page="visible: showMobileNav() || false">
+<div class="drawer-container">
+<a class="navbar" data-bind-page="visible: showMobileNav()" href="javascript:void(0);" onclick="Bobcat.TH.toggleDrawer(); return false;">
+<div class="fa fa-bars"></div>
+</a>
+<div class="navbar-drawer-title-container">
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ==================== -->
+<!-- = Content Partials = -->
+<!-- ==================== -->
+
+
+
+<div id="fb-root"></div>
+
+<script phantom="keep" src="./i3_files/show_init-4a4fedb9f0395b51d59e868672913b05.js" type="text/javascript"></script>
+
+<div class="image-share s-page-layer fill">
+<div class="s-page-shade fill"></div>
+<div class="s-page-wrapper">
+<div class="s-page-content">
+<iframe frameborder="0" id="s-image-share-iframe" marginheight="0" marginwidth="0" src=""></iframe>
+</div>
+</div>
+</div>
+
+<iframe name="strk-tracking" id="strk-tracking" src="./i3_files/ping.html"></iframe>
+<script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script><script src="./i3_files/nr-411.min.js"></script><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script><script type="text/javascript" src="./i3_files/74f55de04c"></script></body></html>
