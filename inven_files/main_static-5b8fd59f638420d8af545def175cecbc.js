@@ -4676,6 +4676,12 @@ e = e.replace(/&/g, " and "), e = e.replace(/\W+/g, " "), e = e.replace(/_/g, " 
 e = e.trim(), e = e.replace(/\s+/g, "-"), e = e.toLowerCase();
 }, String.prototype.trim || (String.prototype.trim = function() {
 return this.replace(/^\s+|\s+$/g, "");
+}), $(function() {
+return $(document).on("click", ".open-support-popup", function(e) {
+return UserVoice ? (e.preventDefault(), UserVoice.push([ "show", {
+mode:"contact"
+} ]), null != window.edit_page ? $B.AE.track("Click Uservoice Button - Editor v1") :$B.AE.track("Click Uservoice Button - Dashboard v1")) :void 0;
+});
 }), $B.trackingAlias = function(e) {
 var t;
 return t = !!$.cookie("__strk_aliased"), 1 !== $S.user_meta.sign_in_count || t ? void 0 :(analytics.alias(e), 
@@ -5288,31 +5294,6 @@ key:this.apiKey,
 url:e
 },
 dataType:"JSON"
-});
-}, e;
-}(), $B.Prefetcher = function() {
-function e(e) {
-var t = this;
-this.prepared = !1, this.url = e, this.nextPage = $("iframe.prefetch"), 0 === this.nextPage.length ? setTimeout(function() {
-return t.nextPage = $("<iframe class='prefetch' src='" + e + "'></iframe>").load(function() {
-return t.prepared = !0;
-}), t.nextPage.hide().appendTo("body");
-}, 1e3) :this.prepared = !0;
-}
-return e.prototype.getTitle = function() {
-return this.nextPage[0].contentDocument.title;
-}, e.prototype.expand = function() {
-return $("body > *:not(.prefetch)").remove(), this.nextPage.css({
-border:"0",
-position:"fixed",
-top:0,
-bottom:0,
-left:0,
-right:0,
-width:"100%",
-height:"100%",
-"z-index":9999999,
-display:"block"
 });
 }, e;
 }();
@@ -6546,7 +6527,7 @@ target:a.attr("target"),
 text:a.text()
 }, window.edit_page.Event.publish(e, i), n.gaPushUserSite([ "_setCustomVar", 1, "url", i.url, 3 ]), 
 n.gaPushUserSite([ "_setCustomVar", 2, "text", i.text, 3 ]), n.gaPushUserSite([ "_trackEvent", "Actions", o.gaEventName ]), 
-r = "#" !== i.url[0], i.url && "_blank" !== i.target && r ? (t.preventDefault(), 
+r = "string" == typeof i.url && "#" !== i.url[0], i.url && "_blank" !== i.target && r ? (t.preventDefault(), 
 setTimeout(function() {
 return window.location.href = i.url;
 }, 500)) :void 0;
@@ -7059,27 +7040,26 @@ return this.complete ? $(this).load() :void 0;
 }, s = function(e) {
 var t;
 return t = e ? e.closest(".slider-container") :$(".slider-container"), t.each(function() {
-var e, t, o, n;
-return e = $(this), t = function(t) {
+var e, t, o, n, r;
+return e = $(this), o = function(t) {
 return e.find(".item").each(function() {
 var e;
 return e = $(this).find(".inner").first(), t(e);
 });
-}, o = 0, t(function(e) {
+}, n = 0, o(function(e) {
 var t;
-return t = e.outerHeight(), o = Math.max(o, t);
-}), i.fullscreen || e.find(".iosslider").hasClass("full-screen") ? (n = $(window).height(), 
-o = Math.max(n, o), o > n && (o += 2 * i.padding, o -= 2)) :(o += 2 * i.padding, 
-o -= 2), t(function(e) {
-var t, n;
-return t = e.outerHeight(), n = Math.max(0, .5 * (o - t)), e.css({
-"margin-top":n,
-"margin-bottom":n
+return t = e.outerHeight(), n = Math.max(n, t);
+}), t = $B.TH.isSmallScreen() ? .8 * i.padding :i.padding, i.fullscreen || e.find(".iosslider").hasClass("full-screen") ? (r = $(window).height(), 
+n = Math.max(r, n), n > r && (n += 2 * (t - 1))) :n += 2 * (t - 1), o(function(e) {
+var t, o;
+return t = e.outerHeight(), o = Math.max(0, .5 * (n - t)), e.css({
+"margin-top":o - 15,
+"margin-bottom":o + 15
 });
 }), $(this).find(".iosslider").css({
-"min-height":"" + o + "px"
+"min-height":"" + n + "px"
 }), setTimeout(function() {
-return window.edit_page.isShowPage ? e.find(".iosslider").height(o) :e.find(".iosslider").iosSlider("update");
+return window.edit_page.isShowPage ? e.find(".iosslider").height(n) :e.find(".iosslider").iosSlider("update");
 }, 300);
 });
 }, a = $B.debounce(s, 100), $(window).resize(function() {
@@ -7106,16 +7086,16 @@ n = {}, o = 0, e.each(function() {
 var e;
 return e = $(this), o = e.offset().top + "", n[o] = n[o] ? n[o].add(e) :e;
 }), i = [];
-for (o in n) t = n[o], t.length > 1 ? i.push($B.TH.matchHeightsAll(t)) :i.push(void 0);
+for (o in n) t = n[o], i.push($B.TH.matchHeightsAll(t));
 return i;
 }
 },
 matchHeightsAll:function(e) {
-var t, o;
-if (!(e.length <= 1 || (t = 0, o = e.first().offset().top, e.each(function() {
+var t;
+return e.css("height", "auto"), e.length <= 1 || (t = 0, e.each(function() {
 var e;
-return e = $(this), e.css("height", "auto"), e.height() > t ? t = e.height() :void 0;
-}), 5 > t))) return t = parseInt(t), e.each(function() {
+return e = $(this).height(), e > t ? t = e :void 0;
+}), 5 > t) ? void 0 :e.each(function() {
 var e, o;
 return o = $(this), o.css("height", t), e = o.find("img"), "" === $.trim(o.text()) && e.length ? (e.css("vertical-align", "middle"), 
 o.css("line-height", t + "px")) :void 0;
@@ -7225,15 +7205,14 @@ height:n,
 });
 },
 setupStrikinglyLogo:function(e) {
-var t, o, n, i, r, a, s, l, c, u;
+var t, o, n, i, r, a, s, l, c, u, d;
 return null == e && (e = -1), n = $(window), t = $(document), o = $($B.DOM.STRIKINGLY_LOGO), 
-s = 4, -1 === e ? (l = "undefined" != typeof $ && null !== $ ? "function" == typeof $.cookie ? $.cookie("pbsVariationId") :void 0 :void 0) ? $B.TH.pbsVariationId = parseInt(l) :($B.TH.pbsVariationId = ~~(Math.random() * s), 
+l = 4, -1 === e ? (c = "undefined" != typeof $ && null !== $ ? "function" == typeof $.cookie ? $.cookie("pbsVariationId") :void 0 :void 0) ? $B.TH.pbsVariationId = parseInt(c) :($B.TH.pbsVariationId = ~~(Math.random() * l), 
 "undefined" != typeof $ && null !== $ && "function" == typeof $.cookie && $.cookie("pbsVariationId", $B.TH.pbsVariationId, {
 expires:3
 })) :($B.TH.pbsVariationId = e, "undefined" != typeof $ && null !== $ && "function" == typeof $.cookie && $.cookie("pbsVariationId", $B.TH.pbsVariationId, {
 expires:3
-})), 1 === $B.TH.pbsVariationId && ($B.TH.pbsVariationId = 3), 0 === $B.TH.pbsVariationId && ($B.TH.pbsVariationId = 3), 
--1 !== e || o && o.is(":visible") ? ($(".logo-footer, .logo-footer-var1, .logo-footer-var2, .logo-footer-var3").hide(), 
+})), $B.TH.pbsVariationId = 1, -1 !== e || o && o.is(":visible") ? ($(".logo-footer, .logo-footer-var2, .logo-footer-var3").hide(), 
 $B.TH.isMobile() ? (o.css({
 bottom:-100,
 position:"fixed"
@@ -7249,13 +7228,15 @@ if (n.scrollTop() < e) return o.animate({
 bottom:-100
 }, 1e3, "easeInOutBack");
 }
-}, 250)) :0 === $B.TH.pbsVariationId ? ($(".logo-footer").show(), i = -70, o.css({
+}, 250)) :(1 === $B.TH.pbsVariationId && (a = $(".logo-link").attr("href"), a = a.replace("pbs_v0", "pbs_v1"), 
+$(".logo-link").attr("href", a)), 0 === $B.TH.pbsVariationId || 1 === $B.TH.pbsVariationId ? ($(".logo-footer").show(), 
+i = -90, o.css({
 bottom:i,
 position:"fixed"
-}).hide(), u = 500, c = 100, n.scroll(function() {
+}).hide(), d = 500, u = 100, n.scroll(function() {
 var e, r, a, s, l;
-return a = "free" === (null != (s = $S.page_meta) ? null != (l = s.user) ? l.membership :void 0 :void 0) ? n.height() + 100 :t.height() - u - 200, 
-e = t.scrollTop() + n.height() + c, e > a + i ? (r = i + (e - a) / u * 60, r > -10 && (r = -10), 
+return a = "free" === (null != (s = $S.page_meta) ? null != (l = s.user) ? l.membership :void 0 :void 0) ? n.height() + 100 :t.height() - d - 290, 
+e = t.scrollTop() + n.height() + u, e > a + i ? (r = i + (e - a) / d * 60, r > -10 && (r = -10), 
 i > r && (r = i), o.css({
 bottom:r
 }).show()) :o.css({
@@ -7273,13 +7254,13 @@ t.scrollTop() > e ? $(".logo-footer-var2").addClass("show") :$(".logo-footer-var
 var e, o, i;
 return e = "free" === (null != (o = $S.page_meta) ? null != (i = o.user) ? i.membership :void 0 :void 0) ? 200 :t.height() - n.height() - 750, 
 t.scrollTop() > e ? $(".logo-footer-var3").addClass("show") :$(".logo-footer-var3").removeClass("show");
-})), a = ~~(1e6 * Math.random()) + "|" + new Date().getTime(), $B.TH.isMobile() || $B.isHeadlessRendering() || $S.conf.is_screenshot_rendering ? void 0 :($B.PageAE.sendPbsImpression({
+}))), s = ~~(1e6 * Math.random()) + "|" + new Date().getTime(), $B.TH.isMobile() || $B.isHeadlessRendering() || $S.conf.is_screenshot_rendering ? void 0 :($B.PageAE.sendPbsImpression({
 variationId:$B.TH.pbsVariationId,
-conversionKey:a
+conversionKey:s
 }), $(".logo-link").click(function() {
 return $B.PageAE.sendPbsConversion({
 variationId:$B.TH.pbsVariationId,
-conversionKey:a
+conversionKey:s
 });
 }))) :void 0;
 },
@@ -7976,6 +7957,7 @@ return $("#fb-root .linkedin_script").remove(), this.createScriptTag("linkedin_s
 }(Bobcat.SocialMediaItem), Bobcat.Twitter = function(t) {
 function n(t, o, i) {
 this.root = t, this.parent = i, this.runScript = e(this.runScript, this), o.imageUrl = asset_path("/assets/icons/twitter.png"), 
+this.isNull(o.share_text) && (self.share_text = "Check out this awesome website on @Strikingly"), 
 n.__super__.constructor.call(this, this.root, o);
 }
 return o(n, t), n.prototype.getTemplate = function() {
@@ -8366,7 +8348,8 @@ this.mouseenterHandler = e(this.mouseenterHandler, this), this.clickCancelEditor
 this.add = e(this.add, this), r = {
 sources:{
 create:function(e) {
-return new Bobcat.Image(a.root, e.data, {}, a);
+var t;
+return t = e.data, t.type = "Image", new Bobcat.Image(a.root, t, {}, a);
 }
 }
 }, n.__super__.constructor.call(this, this.root, o, r), this.nullImage = new Bobcat.Image(this.root, {
@@ -8389,8 +8372,9 @@ return o(n, t), n.include(Bobcat.ImageOptionHelper), n.StripHtml = function(e) {
 return Bobcat.DOM.GALLERY_IMAGES(e).remove(), Bobcat.DOM.GALLERY_IMAGES_EDITOR(e).remove();
 }, n.prototype.add = function(e) {
 var t;
-return console.log("Gallery#add"), t = new Bobcat.Image(this.root, e, {}, this), 
-this.sources.push(t), this.current(t), this.storeCommand();
+return console.log("Gallery#add"), e.type = "Image", e.image_type = this.image_type(), 
+t = new Bobcat.Image(this.root, e, {}, this), this.sources.push(t), this.current(t), 
+this.storeCommand();
 }, n.prototype.clickCancelEditorHandler = function() {
 return this.hideEditorHandler();
 }, n.prototype.mouseenterHandler = function() {
@@ -8731,19 +8715,8 @@ r = {}, r.textStyles = {
 create:function(e) {
 return new Bobcat.TextStyle(c.root, e.data, c);
 }
-}, "undefined" != typeof o.textStyles && o.textStyles && o.selectedClassName || (o.textStyles = [], 
-o.textStyles.push({
-type:"TextStyle",
-displayName:"Light Text",
-colorCode:"#ffffff",
-className:"strikingly-light-text"
-}), o.textStyles.push({
-type:"TextStyle",
-displayName:"Dark Text",
-colorCode:"#222222",
-className:"strikingly-dark-text"
-}), o.selectedClassName = "strikingly-light-text"), null == o.backgroundVariation && (o.backgroundVariation = ""), 
-this.backgroundVariations = [], null != $S.conf.theme_background_variations) {
+}, null == o.backgroundVariation && (o.backgroundVariation = ""), this.backgroundVariations = [], 
+null != $S.conf.theme_background_variations) {
 l = $S.conf.theme_background_variations;
 for (i in l) s = l[i], a = $.extend(!0, {}, s), a.component = this, this.backgroundVariations.push(a);
 }
@@ -8940,12 +8913,14 @@ this.clickCancelEditorHandler = e(this.clickCancelEditorHandler, this), this.cli
 i = {
 video:{
 create:function(e) {
-return new Bobcat.Video(r.root, e.data, r);
+var t;
+return t = e.data, t.type = "Video", new Bobcat.Video(r.root, t, r);
 }
 },
 image:{
 create:function(e) {
-return new Bobcat.Image(r.root, e.data, {}, r);
+var t;
+return t = e.data, t.type = "Image", new Bobcat.Image(r.root, t, {}, r);
 }
 }
 }, n.__super__.constructor.call(this, this.root, o, i);
@@ -8986,7 +8961,7 @@ this.isSuccess = e(this.isSuccess, this), this.isError = e(this.isError, this),
 this.submit = e(this.submit, this), o.isLoading = !1, o.recipient || (o.recipient = ""), 
 this.isNull(o.hideMessageBox) && (o.hideMessageBox = !1), this.isNull(o.hide_name) && (o.hide_name = !1), 
 this.isNull(o.hide_email) && (o.hide_email = !1), this.isNull(o.thanksMessage) && (o.thanksMessage = "Thanks for your message!"), 
-null == $S.page_meta.edit_count && $S.page_meta.show_strikingly_logo && (o.thanksMessage = $("#brand-info").html().replace(/\${thanksMessage}/, o.thanksMessage)), 
+null == $S.page_meta.edit_count && $S.page_meta.show_strikingly_logo && (o.thanksMessage = $("#brand-info").html().replace(/\${thanksMessage}/, $("<div></div>").text(o.thanksMessage).html())), 
 this.isNull(o.name_label) && (o.name_label = "Name", o.email_label = "Email", o.message_label = "Message"), 
 this.isNull(o.submit_label) && (o.submit_label = "Submit"), n.__super__.constructor.call(this, this.root, o, {}), 
 this.status = ko.observable(""), this.invalidEmail = ko.observable(!1), this.invalidName = ko.observable(!1);
