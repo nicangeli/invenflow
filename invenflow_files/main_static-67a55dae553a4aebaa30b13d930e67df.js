@@ -759,7 +759,7 @@ update:p
 return t && e.extend(r, t, {
 nodes:[],
 parent:o
-}), n && (r.tmpl = n, r._ctnt = r._ctnt || r.tmpl(e, r), r.key = ++k, (S.length ? b :v)[k] = r), 
+}), n && (r.tmpl = n, r._ctnt = r._ctnt || r.tmpl(e, r), r.key = ++_, (S.length ? b :v)[_] = r), 
 r;
 }
 function o(t, i, r) {
@@ -805,16 +805,16 @@ var i, r, a, s, l = o;
 if (s = o.getAttribute(f)) {
 for (;l.parentNode && 1 === (l = l.parentNode).nodeType && !(i = l.getAttribute(f)); ) ;
 i !== s && (l = l.parentNode ? 11 === l.nodeType ? 0 :l.getAttribute(f) || 0 :0, 
-(a = v[s]) || (a = b[s], a = t(a, v[l] || b[l], null, !0), a.key = ++k, v[k] = a), 
-_ && n(s)), o.removeAttribute(f);
-} else _ && (a = e.data(o, "tmplItem")) && (n(a.key), v[a.key] = a, l = e.data(o.parentNode, "tmplItem"), 
+(a = v[s]) || (a = b[s], a = t(a, v[l] || b[l], null, !0), a.key = ++_, v[_] = a), 
+k && n(s)), o.removeAttribute(f);
+} else k && (a = e.data(o, "tmplItem")) && (n(a.key), v[a.key] = a, l = e.data(o.parentNode, "tmplItem"), 
 l = l ? l.key :0);
 if (a) {
 for (r = a; r && r.key != l; ) r.nodes.push(o), r = r.parent;
 delete a._ctnt, delete a._wrap, e.data(o, "tmplItem", a);
 }
 }
-var i, r, a, s, l, c = "_" + _, u = {};
+var i, r, a, s, l, c = "_" + k, u = {};
 for (a = 0, s = o.length; s > a; a++) if (1 === (i = o[a]).nodeType) {
 for (r = i.getElementsByTagName("*"), l = r.length - 1; l >= 0; l--) n(r[l]);
 n(i);
@@ -849,7 +849,7 @@ e.tmpl(null, null, null, this).insertBefore(t[0]), e(t).remove();
 var h, m = e.fn.domManip, f = "_tmplitem", w = /^[^<]*(<[\w\W]+>)[^>]*$|\{\{\! /, v = {}, b = {}, y = {
 key:0,
 data:{}
-}, k = 0, _ = 0, S = [];
+}, _ = 0, k = 0, S = [];
 e.each({
 appendTo:"append",
 prependTo:"prepend",
@@ -861,9 +861,9 @@ e.fn[t] = function(n) {
 var i, r, a, s, l = [], c = e(n), u = 1 === this.length && this[0].parentNode;
 if (h = v || {}, u && 11 === u.nodeType && 1 === u.childNodes.length && 1 === c.length) c[o](this[0]), 
 l = this; else {
-for (r = 0, a = c.length; a > r; r++) _ = r, i = (r > 0 ? this.clone(!0) :this).get(), 
+for (r = 0, a = c.length; a > r; r++) k = r, i = (r > 0 ? this.clone(!0) :this).get(), 
 e.fn[o].apply(e(c[r]), i), l = l.concat(i);
-_ = 0, l = this.pushStack(l, t, c.selector);
+k = 0, l = this.pushStack(l, t, c.selector);
 }
 return s = h, h = null, e.tmpl.complete(s), l;
 };
@@ -880,11 +880,11 @@ return e.template(t, this[0]);
 domManip:function(t, o, n) {
 if (t[0] && t[0].nodeType) {
 for (var i, r = e.makeArray(arguments), a = t.length, s = 0; a > s && !(i = e.data(t[s++], "tmplItem")); ) ;
-a > 1 && (r[0] = [ e.makeArray(t) ]), i && _ && (r[2] = function(t) {
+a > 1 && (r[0] = [ e.makeArray(t) ]), i && k && (r[2] = function(t) {
 e.tmpl.afterManip(this, t, n);
 }), m.apply(this, r);
 } else m.apply(this, arguments);
-return _ = 0, h || e.tmpl.complete(v), this;
+return k = 0, h || e.tmpl.complete(v), this;
 }
 }), e.extend({
 tmpl:function(n, i, a, s) {
@@ -958,7 +958,7 @@ v = {};
 },
 afterManip:function(t, o, n) {
 var i = 11 === o.nodeType ? e.makeArray(o.childNodes) :1 === o.nodeType ? [ o ] :[];
-n.call(t, o), l(i), _++;
+n.call(t, o), l(i), k++;
 }
 });
 }(jQuery), function(e) {
@@ -982,7 +982,7 @@ t("Server abort: ", n, " (", n.name, ")"), l(x), y && clearTimeout(y), y = void 
 }
 }
 var n = s.attr("target"), a = s.attr("action");
-k.setAttribute("target", p), i || k.setAttribute("method", "POST"), a != d.url && k.setAttribute("action", d.url), 
+_.setAttribute("target", p), i || _.setAttribute("method", "POST"), a != d.url && _.setAttribute("action", d.url), 
 d.skipEncodingOverride || i && !/post/i.test(i) || s.attr({
 encoding:"multipart/form-data",
 enctype:"multipart/form-data"
@@ -991,33 +991,33 @@ b = !0, l(S);
 }, d.timeout));
 var c = [];
 try {
-if (d.extraData) for (var u in d.extraData) c.push(e('<input type="hidden" name="' + u + '" />').attr("value", d.extraData[u]).appendTo(k)[0]);
+if (d.extraData) for (var u in d.extraData) c.push(e('<input type="hidden" name="' + u + '" />').attr("value", d.extraData[u]).appendTo(_)[0]);
 d.iframeTarget || (h.appendTo("body"), m.attachEvent ? m.attachEvent("onload", l) :m.addEventListener("load", l, !1)), 
-setTimeout(o, 15), k.submit();
+setTimeout(o, 15), _.submit();
 } finally {
-k.setAttribute("action", a), n ? k.setAttribute("target", n) :s.removeAttr("target"), 
+_.setAttribute("action", a), n ? _.setAttribute("target", n) :s.removeAttr("target"), 
 e(c).remove();
 }
 }
 function l(o) {
-if (!f.aborted && !$) {
+if (!f.aborted && !C) {
 try {
-E = r(m);
+$ = r(m);
 } catch (n) {
 t("cannot access response document: ", n), o = x;
 }
 if (o === S && f) return f.abort("timeout"), void 0;
 if (o == x && f) return f.abort("server abort"), void 0;
-if (E && E.location.href != d.iframeSrc || b) {
+if ($ && $.location.href != d.iframeSrc || b) {
 m.detachEvent ? m.detachEvent("onload", l) :m.removeEventListener("load", l, !1);
 var i, a = "success";
 try {
 if (b) throw "timeout";
-var s = "xml" == d.dataType || E.XMLDocument || e.isXMLDoc(E);
-if (t("isXml=" + s), !s && window.opera && (null == E.body || "" == E.body.innerHTML) && --C) return t("requeing onLoad callback, DOM not available"), 
+var s = "xml" == d.dataType || $.XMLDocument || e.isXMLDoc($);
+if (t("isXml=" + s), !s && window.opera && (null == $.body || "" == $.body.innerHTML) && --E) return t("requeing onLoad callback, DOM not available"), 
 setTimeout(l, 250), void 0;
-var c = E.body ? E.body :E.documentElement;
-f.responseText = c ? c.innerHTML :null, f.responseXML = E.XMLDocument ? E.XMLDocument :E, 
+var c = $.body ? $.body :$.documentElement;
+f.responseText = c ? c.innerHTML :null, f.responseXML = $.XMLDocument ? $.XMLDocument :$, 
 s && (d.dataType = "xml"), f.getResponseHeader = function(e) {
 var t = {
 "content-type":d.dataType
@@ -1026,15 +1026,15 @@ return t[e];
 }, c && (f.status = Number(c.getAttribute("status")) || f.status, f.statusText = c.getAttribute("statusText") || f.statusText);
 var u = d.dataType || "", p = /(json|script|text)/.test(u.toLowerCase());
 if (p || d.textarea) {
-var w = E.getElementsByTagName("textarea")[0];
+var w = $.getElementsByTagName("textarea")[0];
 if (w) f.responseText = w.value, f.status = Number(w.getAttribute("status")) || f.status, 
 f.statusText = w.getAttribute("statusText") || f.statusText; else if (p) {
-var v = E.getElementsByTagName("pre")[0], k = E.getElementsByTagName("body")[0];
-v ? f.responseText = v.textContent ? v.textContent :v.innerHTML :k && (f.responseText = k.innerHTML);
+var v = $.getElementsByTagName("pre")[0], _ = $.getElementsByTagName("body")[0];
+v ? f.responseText = v.textContent ? v.textContent :v.innerHTML :_ && (f.responseText = _.innerHTML);
 }
-} else "xml" != d.dataType || f.responseXML || null == f.responseText || (f.responseXML = I(f.responseText));
+} else "xml" != d.dataType || f.responseXML || null == f.responseText || (f.responseXML = M(f.responseText));
 try {
-T = B(f, d.dataType, d);
+T = L(f, d.dataType, d);
 } catch (o) {
 a = "parsererror", f.error = i = o || a;
 }
@@ -1045,16 +1045,16 @@ f.aborted && (t("upload aborted"), a = null), f.status && (a = f.status >= 200 &
 "success" === a ? (d.success && d.success.call(d.context, T, "success", f), g && e.event.trigger("ajaxSuccess", [ f, d ])) :a && (void 0 == i && (i = f.statusText), 
 d.error && d.error.call(d.context, f, a, i), g && e.event.trigger("ajaxError", [ f, d, i ])), 
 g && e.event.trigger("ajaxComplete", [ f, d ]), g && !--e.active && e.event.trigger("ajaxStop"), 
-d.complete && d.complete.call(d.context, f, a), $ = !0, d.timeout && clearTimeout(y), 
+d.complete && d.complete.call(d.context, f, a), C = !0, d.timeout && clearTimeout(y), 
 setTimeout(function() {
 d.iframeTarget || h.remove(), f.responseXML = null;
 }, 100);
 }
 }
 }
-var c, u, d, g, p, h, m, f, w, v, b, y, k = s[0], _ = !!e.fn.prop;
-if (n) for (u = 0; u < n.length; u++) c = e(k[n[u].name]), c[_ ? "prop" :"attr"]("disabled", !1);
-if (e(":input[name=submit],:input[id=submit]", k).length) return alert('Error: Form elements must not have name or id of "submit".'), 
+var c, u, d, g, p, h, m, f, w, v, b, y, _ = s[0], k = !!e.fn.prop;
+if (n) for (u = 0; u < n.length; u++) c = e(_[n[u].name]), c[k ? "prop" :"attr"]("disabled", !1);
+if (e(":input[name=submit],:input[id=submit]", _).length) return alert('Error: Form elements must not have name or id of "submit".'), 
 void 0;
 if (d = e.extend(!0, {}, e.ajaxSettings, o), d.context = d.context || d, p = "jqFormIO" + new Date().getTime(), 
 d.iframeTarget ? (h = e(d.iframeTarget), v = h.attr("name"), null == v ? h.attr("name", p) :p = v) :(h = e('<iframe name="' + p + '" src="' + d.iframeSrc + '" />'), 
@@ -1081,20 +1081,20 @@ d.complete && d.complete.call(d.context, f, n);
 d.beforeSend && d.beforeSend.call(d.context, f, d) === !1) return d.global && e.active--, 
 void 0;
 if (!f.aborted) {
-w = k.clk, w && (v = w.name, v && !w.disabled && (d.extraData = d.extraData || {}, 
-d.extraData[v] = w.value, "image" == w.type && (d.extraData[v + ".x"] = k.clk_x, 
-d.extraData[v + ".y"] = k.clk_y)));
+w = _.clk, w && (v = w.name, v && !w.disabled && (d.extraData = d.extraData || {}, 
+d.extraData[v] = w.value, "image" == w.type && (d.extraData[v + ".x"] = _.clk_x, 
+d.extraData[v + ".y"] = _.clk_y)));
 var S = 1, x = 2;
 d.forceSync ? a() :setTimeout(a, 10);
-var T, E, $, C = 50, I = e.parseXML || function(e, t) {
+var T, $, C, E = 50, M = e.parseXML || function(e, t) {
 return window.ActiveXObject ? (t = new ActiveXObject("Microsoft.XMLDOM"), t.async = "false", 
 t.loadXML(e)) :t = new DOMParser().parseFromString(e, "text/xml"), t && t.documentElement && "parsererror" != t.documentElement.nodeName ? t :null;
-}, O = e.parseJSON || function(e) {
+}, I = e.parseJSON || function(e) {
 return window.eval("(" + e + ")");
-}, B = function(t, o, n) {
+}, L = function(t, o, n) {
 var i = t.getResponseHeader("content-type") || "", r = "xml" === o || !o && i.indexOf("xml") >= 0, a = r ? t.responseXML :t.responseText;
 return r && "parsererror" === a.documentElement.nodeName && e.error && e.error("parsererror"), 
-n && n.dataFilter && (a = n.dataFilter(a, o)), "string" == typeof a && ("json" === o || !o && i.indexOf("json") >= 0 ? a = O(a) :("script" === o || !o && i.indexOf("javascript") >= 0) && e.globalEval(a)), 
+n && n.dataFilter && (a = n.dataFilter(a, o)), "string" == typeof a && ("json" === o || !o && i.indexOf("json") >= 0 ? a = I(a) :("script" === o || !o && i.indexOf("javascript") >= 0) && e.globalEval(a)), 
 a;
 };
 }
@@ -2981,8 +2981,8 @@ arrayEntry:u[f].value,
 domNodes:y,
 dependentObservable:b.dependentObservable
 });
-for (var k = 0, _ = y.length; _ > k; k++) {
-var S = y[k];
+for (var _ = 0, k = y.length; k > _; _++) {
+var S = y[_];
 h.push({
 element:S,
 index:f,
@@ -3097,10 +3097,10 @@ return i[p] && i[p].create instanceof Function;
 };
 if (l = l || new h(), l.get(n)) return e;
 if (p = p || "", v) {
-var k = [], _ = function(e) {
+var _ = [], k = function(e) {
 return e;
 };
-i[p] && i[p].key && (_ = i[p].key);
+i[p] && i[p].key && (k = i[p].key);
 var S = function(e) {
 return e;
 };
@@ -3111,74 +3111,74 @@ parent:f
 });
 }), ko.isObservable(e) || (e = ko.observableArray([]), e.mappedRemove = function(t) {
 var o = "function" == typeof t ? t :function(e) {
-return e === _(t);
+return e === k(t);
 };
 return e.remove(function(e) {
-return o(_(e));
+return o(k(e));
 });
 }, e.mappedRemoveAll = function(t) {
-var o = u(t, _);
+var o = u(t, k);
 return e.remove(function(e) {
-return -1 != ko.utils.arrayIndexOf(o, _(e));
+return -1 != ko.utils.arrayIndexOf(o, k(e));
 });
 }, e.mappedDestroy = function(t) {
 var o = "function" == typeof t ? t :function(e) {
-return e === _(t);
+return e === k(t);
 };
 return e.destroy(function(e) {
-return o(_(e));
+return o(k(e));
 });
 }, e.mappedDestroyAll = function(t) {
-var o = u(t, _);
+var o = u(t, k);
 return e.destroy(function(e) {
-return -1 != ko.utils.arrayIndexOf(o, _(e));
+return -1 != ko.utils.arrayIndexOf(o, k(e));
 });
 }, e.mappedIndexOf = function(t) {
-var o = u(e(), _), n = _(t);
+var o = u(e(), k), n = k(t);
 return ko.utils.arrayIndexOf(o, n);
 }, e.mappedCreate = function(t) {
 if (-1 !== e.mappedIndexOf(t)) throw new Error("There already is an object with the key that you specified.");
 var o = S(t);
 return e.push(o), o;
 });
-for (var x = u(ko.utils.unwrapObservable(e), _).sort(), T = u(n, _).sort(), E = ko.utils.compareArrays(x, T), $ = {}, C = [], I = 0, O = E.length; O > I; I++) {
-var B, A = E[I], D = w + "[" + I + "]";
-switch (A.status) {
+for (var x = u(ko.utils.unwrapObservable(e), k).sort(), T = u(n, k).sort(), $ = ko.utils.compareArrays(x, T), C = {}, E = [], M = 0, I = $.length; I > M; M++) {
+var L, O = $[M], D = w + "[" + M + "]";
+switch (O.status) {
 case "added":
-var H = c(ko.utils.unwrapObservable(n), A.value, _);
-B = ko.utils.unwrapObservable(a(void 0, H, i, l, p, e, D));
-var M = s(ko.utils.unwrapObservable(n), H, $);
-C[M] = B, $[M] = !0;
+var B = c(ko.utils.unwrapObservable(n), O.value, k);
+L = ko.utils.unwrapObservable(a(void 0, B, i, l, p, e, D));
+var A = s(ko.utils.unwrapObservable(n), B, C);
+E[A] = L, C[A] = !0;
 break;
 
 case "retained":
-var H = c(ko.utils.unwrapObservable(n), A.value, _);
-B = c(e, A.value, _), a(B, H, i, l, p, e, D);
-var M = s(ko.utils.unwrapObservable(n), H, $);
-C[M] = B, $[M] = !0;
+var B = c(ko.utils.unwrapObservable(n), O.value, k);
+L = c(e, O.value, k), a(L, B, i, l, p, e, D);
+var A = s(ko.utils.unwrapObservable(n), B, C);
+E[A] = L, C[A] = !0;
 break;
 
 case "deleted":
-B = c(e, A.value, _);
+L = c(e, O.value, k);
 }
-k.push({
-event:A.status,
-item:B
+_.push({
+event:O.status,
+item:L
 });
 }
-e(C), i[p] && i[p].arrayChanged && ko.utils.arrayForEach(k, function(e) {
+e(E), i[p] && i[p].arrayChanged && ko.utils.arrayForEach(_, function(e) {
 i[p].arrayChanged(e.event, e.item);
 });
 } else if (g(n)) {
 if (!e) {
 if (y()) {
-var N = r(function() {
+var H = r(function() {
 return i[p].create({
 data:n,
 parent:f
 });
 });
-return N;
+return H;
 }
 e = {};
 }
@@ -3393,8 +3393,8 @@ s = !a;
 }
 return n.pop(), s;
 }
-var t = this, o = t._, n = {}, i = Array.prototype, r = Object.prototype, a = Function.prototype, s = i.slice, l = i.unshift, c = r.toString, u = r.hasOwnProperty, d = i.forEach, g = i.map, p = i.reduce, h = i.reduceRight, m = i.filter, f = i.every, w = i.some, v = i.indexOf, b = i.lastIndexOf, y = Array.isArray, k = Object.keys, _ = a.bind, S = function(e) {
-return new O(e);
+var t = this, o = t._, n = {}, i = Array.prototype, r = Object.prototype, a = Function.prototype, s = i.slice, l = i.unshift, c = r.toString, u = r.hasOwnProperty, d = i.forEach, g = i.map, p = i.reduce, h = i.reduceRight, m = i.filter, f = i.every, w = i.some, v = i.indexOf, b = i.lastIndexOf, y = Array.isArray, _ = Object.keys, k = a.bind, S = function(e) {
+return new I(e);
 };
 "undefined" != typeof exports ? ("undefined" != typeof module && module.exports && (exports = module.exports = S), 
 exports._ = S) :t._ = S, S.VERSION = "1.3.1";
@@ -3583,15 +3583,15 @@ for (var n = Math.max(Math.ceil((t - e) / o), 0), i = 0, r = new Array(n); n > i
 e += o;
 return r;
 };
-var E = function() {};
+var $ = function() {};
 S.bind = function(e, t) {
 var o, n;
-if (e.bind === _ && _) return _.apply(e, s.call(arguments, 1));
+if (e.bind === k && k) return k.apply(e, s.call(arguments, 1));
 if (!S.isFunction(e)) throw new TypeError();
 return n = s.call(arguments, 2), o = function() {
 if (!(this instanceof o)) return e.apply(t, n.concat(s.call(arguments)));
-E.prototype = e.prototype;
-var i = new E(), r = e.apply(i, n.concat(s.call(arguments)));
+$.prototype = e.prototype;
+var i = new $(), r = e.apply(i, n.concat(s.call(arguments)));
 return Object(r) === r ? r :i;
 };
 }, S.bindAll = function(e) {
@@ -3651,7 +3651,7 @@ return t[0];
 return 0 >= e ? t() :function() {
 return --e < 1 ? t.apply(this, arguments) :void 0;
 };
-}, S.keys = k || function(e) {
+}, S.keys = _ || function(e) {
 if (e !== Object(e)) throw new TypeError("Invalid object");
 var t = [];
 for (var o in e) S.has(e, o) && (t[t.length] = o);
@@ -3720,28 +3720,28 @@ for (var n = 0; e > n; n++) t.call(o, n);
 return ("" + e).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;").replace(/\//g, "&#x2F;");
 }, S.mixin = function(e) {
 x(S.functions(e), function(t) {
-A(t, S[t] = e[t]);
+O(t, S[t] = e[t]);
 });
 };
-var $ = 0;
+var C = 0;
 S.uniqueId = function(e) {
-var t = $++;
+var t = C++;
 return e ? e + t :t;
 }, S.templateSettings = {
 evaluate:/<%([\s\S]+?)%>/g,
 interpolate:/<%=([\s\S]+?)%>/g,
 escape:/<%-([\s\S]+?)%>/g
 };
-var C = /.^/, I = function(e) {
+var E = /.^/, M = function(e) {
 return e.replace(/\\\\/g, "\\").replace(/\\'/g, "'");
 };
 S.template = function(e, t) {
-var o = S.templateSettings, n = "var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('" + e.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(o.escape || C, function(e, t) {
-return "',_.escape(" + I(t) + "),'";
-}).replace(o.interpolate || C, function(e, t) {
-return "'," + I(t) + ",'";
-}).replace(o.evaluate || C, function(e, t) {
-return "');" + I(t).replace(/[\r\n\t]/g, " ") + ";__p.push('";
+var o = S.templateSettings, n = "var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('" + e.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(o.escape || E, function(e, t) {
+return "',_.escape(" + M(t) + "),'";
+}).replace(o.interpolate || E, function(e, t) {
+return "'," + M(t) + ",'";
+}).replace(o.evaluate || E, function(e, t) {
+return "');" + M(t).replace(/[\r\n\t]/g, " ") + ";__p.push('";
 }).replace(/\r/g, "\\r").replace(/\n/g, "\\n").replace(/\t/g, "\\t") + "');}return __p.join('');", i = new Function("obj", "_", n);
 return t ? i(t, S) :function(e) {
 return i.call(this, e, S);
@@ -3749,34 +3749,34 @@ return i.call(this, e, S);
 }, S.chain = function(e) {
 return S(e).chain();
 };
-var O = function(e) {
+var I = function(e) {
 this._wrapped = e;
 };
-S.prototype = O.prototype;
-var B = function(e, t) {
+S.prototype = I.prototype;
+var L = function(e, t) {
 return t ? S(e).chain() :e;
-}, A = function(e, t) {
-O.prototype[e] = function() {
+}, O = function(e, t) {
+I.prototype[e] = function() {
 var e = s.call(arguments);
-return l.call(e, this._wrapped), B(t.apply(S, e), this._chain);
+return l.call(e, this._wrapped), L(t.apply(S, e), this._chain);
 };
 };
 S.mixin(S), x([ "pop", "push", "reverse", "shift", "sort", "splice", "unshift" ], function(e) {
 var t = i[e];
-O.prototype[e] = function() {
+I.prototype[e] = function() {
 var o = this._wrapped;
 t.apply(o, arguments);
 var n = o.length;
-return "shift" != e && "splice" != e || 0 !== n || delete o[0], B(o, this._chain);
+return "shift" != e && "splice" != e || 0 !== n || delete o[0], L(o, this._chain);
 };
 }), x([ "concat", "join", "slice" ], function(e) {
 var t = i[e];
-O.prototype[e] = function() {
-return B(t.apply(this._wrapped, arguments), this._chain);
+I.prototype[e] = function() {
+return L(t.apply(this._wrapped, arguments), this._chain);
 };
-}), O.prototype.chain = function() {
+}), I.prototype.chain = function() {
 return this._chain = !0, this;
-}, O.prototype.value = function() {
+}, I.prototype.value = function() {
 return this._wrapped;
 };
 }.call(this), /*!
@@ -4209,43 +4209,43 @@ s.transitions[s.isOpened ? e.nextMethod :e.openMethod](), s._preloadImages();
 }
 },
 _setDimension:function() {
-var e, t, n, i, r, a, l, c, u, d, g, h, w, v, b, y = s.getViewport(), k = 0, _ = !1, S = !1, x = s.wrap, T = s.skin, E = s.inner, $ = s.current, C = $.width, I = $.height, O = $.minWidth, B = $.minHeight, A = $.maxWidth, D = $.maxHeight, H = $.scrolling, M = $.scrollOutside ? $.scrollbarWidth :0, N = $.margin, j = m(N[1] + N[3]), L = m(N[0] + N[2]);
-if (x.add(T).add(E).width("auto").height("auto").removeClass("fancybox-tmp"), e = m(T.outerWidth(!0) - T.width()), 
-t = m(T.outerHeight(!0) - T.height()), n = j + e, i = L + t, r = p(C) ? (y.w - n) * m(C) / 100 :C, 
-a = p(I) ? (y.h - i) * m(I) / 100 :I, "iframe" === $.type) {
-if (v = $.content, $.autoHeight && 1 === v.data("ready")) try {
-v[0].contentWindow.document.location && (E.width(r).height(9999), b = v.contents().find("body"), 
-M && b.css("overflow-x", "hidden"), a = b.outerHeight(!0));
+var e, t, n, i, r, a, l, c, u, d, g, h, w, v, b, y = s.getViewport(), _ = 0, k = !1, S = !1, x = s.wrap, T = s.skin, $ = s.inner, C = s.current, E = C.width, M = C.height, I = C.minWidth, L = C.minHeight, O = C.maxWidth, D = C.maxHeight, B = C.scrolling, A = C.scrollOutside ? C.scrollbarWidth :0, H = C.margin, N = m(H[1] + H[3]), j = m(H[0] + H[2]);
+if (x.add(T).add($).width("auto").height("auto").removeClass("fancybox-tmp"), e = m(T.outerWidth(!0) - T.width()), 
+t = m(T.outerHeight(!0) - T.height()), n = N + e, i = j + t, r = p(E) ? (y.w - n) * m(E) / 100 :E, 
+a = p(M) ? (y.h - i) * m(M) / 100 :M, "iframe" === C.type) {
+if (v = C.content, C.autoHeight && 1 === v.data("ready")) try {
+v[0].contentWindow.document.location && ($.width(r).height(9999), b = v.contents().find("body"), 
+A && b.css("overflow-x", "hidden"), a = b.outerHeight(!0));
 } catch (z) {}
-} else ($.autoWidth || $.autoHeight) && (E.addClass("fancybox-tmp"), $.autoWidth || E.width(r), 
-$.autoHeight || E.height(a), $.autoWidth && (r = E.width()), $.autoHeight && (a = E.height()), 
-E.removeClass("fancybox-tmp"));
-if (C = m(r), I = m(a), u = r / a, O = m(p(O) ? m(O, "w") - n :O), A = m(p(A) ? m(A, "w") - n :A), 
-B = m(p(B) ? m(B, "h") - i :B), D = m(p(D) ? m(D, "h") - i :D), l = A, c = D, $.fitToView && (A = Math.min(y.w - n, A), 
-D = Math.min(y.h - i, D)), h = y.w - j, w = y.h - L, $.aspectRatio ? (C > A && (C = A, 
-I = m(C / u)), I > D && (I = D, C = m(I * u)), O > C && (C = O, I = m(C / u)), B > I && (I = B, 
-C = m(I * u))) :(C = Math.max(O, Math.min(C, A)), $.autoHeight && "iframe" !== $.type && (E.width(C), 
-I = E.height()), I = Math.max(B, Math.min(I, D))), $.fitToView) if (E.width(C).height(I), 
-x.width(C + e), d = x.width(), g = x.height(), $.aspectRatio) for (;(d > h || g > w) && C > O && I > B && !(k++ > 19); ) I = Math.max(B, Math.min(D, I - 10)), 
-C = m(I * u), O > C && (C = O, I = m(C / u)), C > A && (C = A, I = m(C / u)), E.width(C).height(I), 
-x.width(C + e), d = x.width(), g = x.height(); else C = Math.max(O, Math.min(C, C - (d - h))), 
-I = Math.max(B, Math.min(I, I - (g - w)));
-M && "auto" === H && a > I && h > C + e + M && (C += M), E.width(C).height(I), x.width(C + e), 
-d = x.width(), g = x.height(), _ = (d > h || g > w) && C > O && I > B, S = $.aspectRatio ? l > C && c > I && r > C && a > I :(l > C || c > I) && (r > C || a > I), 
-o.extend($, {
+} else (C.autoWidth || C.autoHeight) && ($.addClass("fancybox-tmp"), C.autoWidth || $.width(r), 
+C.autoHeight || $.height(a), C.autoWidth && (r = $.width()), C.autoHeight && (a = $.height()), 
+$.removeClass("fancybox-tmp"));
+if (E = m(r), M = m(a), u = r / a, I = m(p(I) ? m(I, "w") - n :I), O = m(p(O) ? m(O, "w") - n :O), 
+L = m(p(L) ? m(L, "h") - i :L), D = m(p(D) ? m(D, "h") - i :D), l = O, c = D, C.fitToView && (O = Math.min(y.w - n, O), 
+D = Math.min(y.h - i, D)), h = y.w - N, w = y.h - j, C.aspectRatio ? (E > O && (E = O, 
+M = m(E / u)), M > D && (M = D, E = m(M * u)), I > E && (E = I, M = m(E / u)), L > M && (M = L, 
+E = m(M * u))) :(E = Math.max(I, Math.min(E, O)), C.autoHeight && "iframe" !== C.type && ($.width(E), 
+M = $.height()), M = Math.max(L, Math.min(M, D))), C.fitToView) if ($.width(E).height(M), 
+x.width(E + e), d = x.width(), g = x.height(), C.aspectRatio) for (;(d > h || g > w) && E > I && M > L && !(_++ > 19); ) M = Math.max(L, Math.min(D, M - 10)), 
+E = m(M * u), I > E && (E = I, M = m(E / u)), E > O && (E = O, M = m(E / u)), $.width(E).height(M), 
+x.width(E + e), d = x.width(), g = x.height(); else E = Math.max(I, Math.min(E, E - (d - h))), 
+M = Math.max(L, Math.min(M, M - (g - w)));
+A && "auto" === B && a > M && h > E + e + A && (E += A), $.width(E).height(M), x.width(E + e), 
+d = x.width(), g = x.height(), k = (d > h || g > w) && E > I && M > L, S = C.aspectRatio ? l > E && c > M && r > E && a > M :(l > E || c > M) && (r > E || a > M), 
+o.extend(C, {
 dim:{
 width:f(d),
 height:f(g)
 },
 origWidth:r,
 origHeight:a,
-canShrink:_,
+canShrink:k,
 canExpand:S,
 wPadding:e,
 hPadding:t,
 wrapSpace:g - T.outerHeight(!0),
-skinSpace:T.height() - I
-}), !v && $.autoHeight && I > B && D > I && !S && E.height("auto");
+skinSpace:T.height() - M
+}), !v && C.autoHeight && M > L && D > M && !S && $.height("auto");
 },
 _getPosition:function(e) {
 var t = s.current, o = s.getViewport(), n = t.margin, i = s.wrap.width() + n[1] + n[3], r = s.wrap.height() + n[0] + n[2], a = {
@@ -6526,7 +6526,7 @@ url:a.attr("href"),
 target:a.attr("target"),
 text:a.text()
 }, window.edit_page.Event.publish(e, i), n.gaPushUserSite([ "_setCustomVar", 1, "url", i.url, 3 ]), 
-n.gaPushUserSite([ "_setCustomVar", 2, "text", i.text, 3 ]), n.gaPushUserSite([ "_trackEvent", "Actions", o.gaEventName ]), 
+n.gaPushUserSite([ "_setCustomVar", 2, "text", i.text, 3 ]), n.gaPushUserSite([ "_trackEvent", "Actions", o.gaEventName, i.text ]), 
 r = "string" == typeof i.url && "#" !== i.url[0], i.url && "_blank" !== i.target && r ? (t.preventDefault(), 
 setTimeout(function() {
 return window.location.href = i.url;
@@ -7393,7 +7393,7 @@ return $(window).hashchange(), e.registerSlideWaypoints();
 }, 1500) :this.registerSlideWaypoints();
 }, t.prototype.removeHash = function() {
 var e;
-return e = window.location.hash, "" !== e && "#" !== e && 0 !== e.indexOf("#!/~") ? "undefined" != typeof history && null !== history ? "function" == typeof history.replaceState ? history.replaceState("", document.title, window.location.pathname + window.location.search) :void 0 :void 0 :void 0;
+return e = window.location.hash, "" !== e && "#" !== e && 0 !== e.indexOf("#!") ? "undefined" != typeof history && null !== history ? "function" == typeof history.replaceState ? history.replaceState("", document.title, window.location.pathname + window.location.search) :void 0 :void 0 :void 0;
 }, t.prototype.lockKeyboard = function() {
 return this.keyboardLock = !0;
 }, t.prototype.unlockKeyboard = function() {
@@ -9878,7 +9878,7 @@ return "" === t.val() ? o.hide() :void 0;
 }), $B.TH.enableAnimationForBlocks();
 });
 }.call(this), function(e) {
-var t = 0, o = 0, n = 0, i = 10, r = 0, a = "ontouchstart" in window || navigator.msMaxTouchPoints > 0, s = "onorientationchange" in window, l = !1, c = !1, u = !1, d = !1, g = !1, p = !1, h = !1, m = "pointer", f = "pointer", w = new Array(), v = new Array(), b = new Array(), y = new Array(), k = new Array(), _ = new Array(), S = new Array(), x = new Array(), T = new Array(), E = new Array(), $ = new Array(), C = new Array(), I = new Array(), O = {
+var t = 0, o = 0, n = 0, i = 10, r = 0, a = "ontouchstart" in window || navigator.msMaxTouchPoints > 0, s = "onorientationchange" in window, l = !1, c = !1, u = !1, d = !1, g = !1, p = !1, h = !1, m = "pointer", f = "pointer", w = new Array(), v = new Array(), b = new Array(), y = new Array(), _ = new Array(), k = new Array(), S = new Array(), x = new Array(), T = new Array(), $ = new Array(), C = new Array(), E = new Array(), M = new Array(), I = {
 showScrollbar:function(t, o) {
 t.scrollbarHide && e("." + o).css({
 opacity:t.scrollbarOpacity,
@@ -9886,129 +9886,129 @@ filter:"alpha(opacity:" + 100 * t.scrollbarOpacity + ")"
 });
 },
 hideScrollbar:function(e, t, o, n, r, a, s, l, c, u) {
-if (e.scrollbar && e.scrollbarHide) for (var d = o; o + 25 > d; d++) t[t.length] = O.hideScrollbarIntervalTimer(i * d, n[o], (o + 24 - d) / 24, r, a, s, l, c, u, e);
+if (e.scrollbar && e.scrollbarHide) for (var d = o; o + 25 > d; d++) t[t.length] = I.hideScrollbarIntervalTimer(i * d, n[o], (o + 24 - d) / 24, r, a, s, l, c, u, e);
 },
 hideScrollbarInterval:function(t, o, n, i, a, s, l, c, u) {
-r = -1 * t / $[c] * (a - s - l - i), O.setSliderOffset("." + n, r), e("." + n).css({
+r = -1 * t / C[c] * (a - s - l - i), I.setSliderOffset("." + n, r), e("." + n).css({
 opacity:u.scrollbarOpacity * o,
 filter:"alpha(opacity:" + u.scrollbarOpacity * o * 100 + ")"
 });
 },
 slowScrollHorizontalInterval:function(t, o, n, i, a, s, l, c, u, d, g, p, h, m, f, w, v, b, y) {
 if (y.infiniteSlider) {
-if (n <= -1 * $[w] || n <= -1 * C[w]) {
-var k = e(t).width();
-if (n <= -1 * C[w]) {
-var _ = -1 * g[0];
+if (n <= -1 * C[w] || n <= -1 * E[w]) {
+var _ = e(t).width();
+if (n <= -1 * E[w]) {
+var k = -1 * g[0];
 e(o).each(function(t) {
-O.setSliderOffset(e(o)[t], _ + v), t < p.length && (p[t] = -1 * _), _ += f[t];
-}), n += -1 * p[0], E[w] = -1 * p[0] + v, $[w] = E[w] + k - s, T[w] = 0;
+I.setSliderOffset(e(o)[t], k + v), t < p.length && (p[t] = -1 * k), k += f[t];
+}), n += -1 * p[0], $[w] = -1 * p[0] + v, C[w] = $[w] + _ - s, T[w] = 0;
 }
-for (;n <= -1 * $[w]; ) {
-var I = 0, B = O.getSliderOffset(e(o[0]), "x");
+for (;n <= -1 * C[w]; ) {
+var M = 0, L = I.getSliderOffset(e(o[0]), "x");
 e(o).each(function(e) {
-O.getSliderOffset(this, "x") < B && (B = O.getSliderOffset(this, "x"), I = e);
+I.getSliderOffset(this, "x") < L && (L = I.getSliderOffset(this, "x"), M = e);
 });
-var A = E[w] + k;
-O.setSliderOffset(e(o)[I], A), E[w] = -1 * p[1] + v, $[w] = E[w] + k - s, p.splice(0, 1), 
-p.splice(p.length, 0, -1 * A + v), T[w]++;
+var O = $[w] + _;
+I.setSliderOffset(e(o)[M], O), $[w] = -1 * p[1] + v, C[w] = $[w] + _ - s, p.splice(0, 1), 
+p.splice(p.length, 0, -1 * O + v), T[w]++;
 }
 }
-if (n >= -1 * E[w] || n >= 0) {
-var k = e(t).width();
+if (n >= -1 * $[w] || n >= 0) {
+var _ = e(t).width();
 if (n > 0) {
-var _ = -1 * g[0];
+var k = -1 * g[0];
 for (e(o).each(function(t) {
-O.setSliderOffset(e(o)[t], _ + v), t < p.length && (p[t] = -1 * _), _ += f[t];
-}), n -= -1 * p[0], E[w] = -1 * p[0] + v, $[w] = E[w] + k - s, T[w] = m; -1 * p[0] - k + v > 0; ) {
-var D = 0, H = O.getSliderOffset(e(o[0]), "x");
+I.setSliderOffset(e(o)[t], k + v), t < p.length && (p[t] = -1 * k), k += f[t];
+}), n -= -1 * p[0], $[w] = -1 * p[0] + v, C[w] = $[w] + _ - s, T[w] = m; -1 * p[0] - _ + v > 0; ) {
+var D = 0, B = I.getSliderOffset(e(o[0]), "x");
 e(o).each(function(e) {
-O.getSliderOffset(this, "x") > H && (H = O.getSliderOffset(this, "x"), D = e);
+I.getSliderOffset(this, "x") > B && (B = I.getSliderOffset(this, "x"), D = e);
 });
-var A = E[w] - f[D];
-O.setSliderOffset(e(o)[D], A), p.splice(0, 0, -1 * A + v), p.splice(p.length - 1, 1), 
-E[w] = -1 * p[0] + v, $[w] = E[w] + k - s, T[w]--, S[w]++;
+var O = $[w] - f[D];
+I.setSliderOffset(e(o)[D], O), p.splice(0, 0, -1 * O + v), p.splice(p.length - 1, 1), 
+$[w] = -1 * p[0] + v, C[w] = $[w] + _ - s, T[w]--, S[w]++;
 }
 }
-for (;n > -1 * E[w]; ) {
-var D = 0, H = O.getSliderOffset(e(o[0]), "x");
+for (;n > -1 * $[w]; ) {
+var D = 0, B = I.getSliderOffset(e(o[0]), "x");
 e(o).each(function(e) {
-O.getSliderOffset(this, "x") > H && (H = O.getSliderOffset(this, "x"), D = e);
+I.getSliderOffset(this, "x") > B && (B = I.getSliderOffset(this, "x"), D = e);
 });
-var A = E[w] - f[D];
-O.setSliderOffset(e(o)[D], A), p.splice(0, 0, -1 * A + v), p.splice(p.length - 1, 1), 
-E[w] = -1 * p[0] + v, $[w] = E[w] + k - s, T[w]--;
+var O = $[w] - f[D];
+I.setSliderOffset(e(o)[D], O), p.splice(0, 0, -1 * O + v), p.splice(p.length - 1, 1), 
+$[w] = -1 * p[0] + v, C[w] = $[w] + _ - s, T[w]--;
 }
 }
 }
-var M = !1, N = O.calcActiveOffset(y, n, p, s, T[w], m, d, w), A = (N + T[w] + m) % m;
-if (y.infiniteSlider ? A != x[w] && (M = !0) :N != S[w] && (M = !0), M) {
-var j = new O.args("change", y, t, e(t).children(":eq(" + A + ")"), A, b);
-e(t).parent().data("args", j), "" != y.onSlideChange && y.onSlideChange(j);
+var A = !1, H = I.calcActiveOffset(y, n, p, s, T[w], m, d, w), O = (H + T[w] + m) % m;
+if (y.infiniteSlider ? O != x[w] && (A = !0) :H != S[w] && (A = !0), A) {
+var N = new I.args("change", y, t, e(t).children(":eq(" + O + ")"), O, b);
+e(t).parent().data("args", N), "" != y.onSlideChange && y.onSlideChange(N);
 }
-if (S[w] = N, x[w] = A, n = Math.floor(n), O.setSliderOffset(t, n), y.scrollbar) {
-r = Math.floor((-1 * n - E[w] + v) / ($[w] - E[w] + v) * (l - c - a));
-var L = a - u;
-n >= -1 * E[w] + v ? (L = a - u - -1 * r, O.setSliderOffset(e("." + i), 0), e("." + i).css({
-width:L + "px"
-})) :n <= -1 * $[w] + 1 ? (L = l - c - u - r, O.setSliderOffset(e("." + i), r), 
+if (S[w] = H, x[w] = O, n = Math.floor(n), I.setSliderOffset(t, n), y.scrollbar) {
+r = Math.floor((-1 * n - $[w] + v) / (C[w] - $[w] + v) * (l - c - a));
+var j = a - u;
+n >= -1 * $[w] + v ? (j = a - u - -1 * r, I.setSliderOffset(e("." + i), 0), e("." + i).css({
+width:j + "px"
+})) :n <= -1 * C[w] + 1 ? (j = l - c - u - r, I.setSliderOffset(e("." + i), r), 
 e("." + i).css({
-width:L + "px"
-})) :(O.setSliderOffset(e("." + i), r), e("." + i).css({
-width:L + "px"
+width:j + "px"
+})) :(I.setSliderOffset(e("." + i), r), e("." + i).css({
+width:j + "px"
 }));
 }
 },
-slowScrollHorizontal:function(t, o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b, y, k, C) {
-var I = O.getSliderOffset(t, "x"), B = new Array(), A = new Array(), D = 0, H = 25 / 1024 * c;
-frictionCoefficient = C.frictionCoefficient, elasticFrictionCoefficient = C.elasticFrictionCoefficient, 
-snapFrictionCoefficient = C.snapFrictionCoefficient, a > C.snapVelocityThreshold && C.snapToChildren && !y ? D = 1 :a < -1 * C.snapVelocityThreshold && C.snapToChildren && !y && (D = -1), 
--1 * H > a ? a = -1 * H :a > H && (a = H), e(t)[0] !== e(b)[0] && (D = -1 * D, a = -2 * a);
-var M = T[f];
-if (C.infiniteSlider) var N = E[f], j = $[f];
-for (var L = new Array(), z = new Array(), R = 0; R < h.length; R++) L[R] = h[R], 
-R < o.length && (z[R] = O.getSliderOffset(e(o[R]), "x"));
+slowScrollHorizontal:function(t, o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b, y, _, E) {
+var M = I.getSliderOffset(t, "x"), L = new Array(), O = new Array(), D = 0, B = 25 / 1024 * c;
+frictionCoefficient = E.frictionCoefficient, elasticFrictionCoefficient = E.elasticFrictionCoefficient, 
+snapFrictionCoefficient = E.snapFrictionCoefficient, a > E.snapVelocityThreshold && E.snapToChildren && !y ? D = 1 :a < -1 * E.snapVelocityThreshold && E.snapToChildren && !y && (D = -1), 
+-1 * B > a ? a = -1 * B :a > B && (a = B), e(t)[0] !== e(b)[0] && (D = -1 * D, a = -2 * a);
+var A = T[f];
+if (E.infiniteSlider) var H = $[f], N = C[f];
+for (var j = new Array(), z = new Array(), P = 0; P < h.length; P++) j[P] = h[P], 
+P < o.length && (z[P] = I.getSliderOffset(e(o[P]), "x"));
 for (;a > 1 || -1 > a; ) {
-if (a *= frictionCoefficient, I += a, (I > -1 * E[f] || I < -1 * $[f]) && !C.infiniteSlider && (a *= elasticFrictionCoefficient, 
-I += a), C.infiniteSlider) {
-if (-1 * j >= I) {
-for (var P = e(t).width(), F = 0, q = z[0], R = 0; R < z.length; R++) z[R] < q && (q = z[R], 
-F = R);
-var V = N + P;
-z[F] = V, N = -1 * L[1] + k, j = N + P - c, L.splice(0, 1), L.splice(L.length, 0, -1 * V + k), 
-M++;
+if (a *= frictionCoefficient, M += a, (M > -1 * $[f] || M < -1 * C[f]) && !E.infiniteSlider && (a *= elasticFrictionCoefficient, 
+M += a), E.infiniteSlider) {
+if (-1 * N >= M) {
+for (var F = e(t).width(), R = 0, Y = z[0], P = 0; P < z.length; P++) z[P] < Y && (Y = z[P], 
+R = P);
+var q = H + F;
+z[R] = q, H = -1 * j[1] + _, N = H + F - c, j.splice(0, 1), j.splice(j.length, 0, -1 * q + _), 
+A++;
 }
-if (I >= -1 * N) {
-for (var P = e(t).width(), U = 0, W = z[0], R = 0; R < z.length; R++) z[R] > W && (W = z[R], 
-U = R);
-var V = N - m[U];
-z[U] = V, L.splice(0, 0, -1 * V + k), L.splice(L.length - 1, 1), N = -1 * L[0] + k, 
-j = N + P - c, M--;
+if (M >= -1 * H) {
+for (var F = e(t).width(), W = 0, U = z[0], P = 0; P < z.length; P++) z[P] > U && (U = z[P], 
+W = P);
+var q = H - m[W];
+z[W] = q, j.splice(0, 0, -1 * q + _), j.splice(j.length - 1, 1), H = -1 * j[0] + _, 
+N = H + F - c, A--;
 }
 }
-B[B.length] = I, A[A.length] = a;
+L[L.length] = M, O[O.length] = a;
 }
-var G = !1, Q = O.calcActiveOffset(C, I, L, c, M, v, S[f], f), J = (Q + M + v) % v;
-if (C.snapToChildren && (C.infiniteSlider ? J != x[f] && (G = !0) :Q != S[f] && (G = !0), 
-0 > D && !G ? (Q++, Q >= h.length && !C.infiniteSlider && (Q = h.length - 1)) :D > 0 && !G && (Q--, 
-0 > Q && !C.infiniteSlider && (Q = 0))), C.snapToChildren || (I > -1 * E[f] || I < -1 * $[f]) && !C.infiniteSlider) {
-for ((I > -1 * E[f] || I < -1 * $[f]) && !C.infiniteSlider ? B.splice(0, B.length) :(B.splice(.1 * B.length, B.length), 
-I = B.length > 0 ? B[B.length - 1] :I); I < L[Q] - .5 || I > L[Q] + .5; ) I = (I - L[Q]) * snapFrictionCoefficient + L[Q], 
-B[B.length] = I;
-B[B.length] = L[Q];
+var V = !1, G = I.calcActiveOffset(E, M, j, c, A, v, S[f], f), J = (G + A + v) % v;
+if (E.snapToChildren && (E.infiniteSlider ? J != x[f] && (V = !0) :G != S[f] && (V = !0), 
+0 > D && !V ? (G++, G >= h.length && !E.infiniteSlider && (G = h.length - 1)) :D > 0 && !V && (G--, 
+0 > G && !E.infiniteSlider && (G = 0))), E.snapToChildren || (M > -1 * $[f] || M < -1 * C[f]) && !E.infiniteSlider) {
+for ((M > -1 * $[f] || M < -1 * C[f]) && !E.infiniteSlider ? L.splice(0, L.length) :(L.splice(.1 * L.length, L.length), 
+M = L.length > 0 ? L[L.length - 1] :M); M < j[G] - .5 || M > j[G] + .5; ) M = (M - j[G]) * snapFrictionCoefficient + j[G], 
+L[L.length] = M;
+L[L.length] = j[G];
 }
-var Y = 1;
-B.length % 2 != 0 && (Y = 0);
+var Q = 1;
+L.length % 2 != 0 && (Q = 0);
 for (var K = 0; K < n.length; K++) clearTimeout(n[K]);
-for (var X = (Q + M + v) % v, Z = 0, K = Y; K < B.length; K += 2) (K == Y || Math.abs(B[K] - Z) > 1 || K >= B.length - 2) && (Z = B[K], 
-n[n.length] = O.slowScrollHorizontalIntervalTimer(i * K, t, o, B[K], r, l, c, u, d, g, Q, p, h, w, v, m, f, k, X, C));
-var G = !1, J = (Q + T[f] + v) % v;
-C.infiniteSlider ? J != x[f] && (G = !0) :Q != S[f] && (G = !0), "" != C.onSlideComplete && B.length > 1 && (n[n.length] = O.onSlideCompleteTimer(i * (K + 1), C, t, e(t).children(":eq(" + J + ")"), X, f)), 
-n[n.length] = O.updateBackfaceVisibilityTimer(i * (K + 1), o, f, v, C), _[f] = n, 
-O.hideScrollbar(C, n, K, B, r, l, c, d, g, f);
+for (var X = (G + A + v) % v, Z = 0, K = Q; K < L.length; K += 2) (K == Q || Math.abs(L[K] - Z) > 1 || K >= L.length - 2) && (Z = L[K], 
+n[n.length] = I.slowScrollHorizontalIntervalTimer(i * K, t, o, L[K], r, l, c, u, d, g, G, p, h, w, v, m, f, _, X, E));
+var V = !1, J = (G + T[f] + v) % v;
+E.infiniteSlider ? J != x[f] && (V = !0) :G != S[f] && (V = !0), "" != E.onSlideComplete && L.length > 1 && (n[n.length] = I.onSlideCompleteTimer(i * (K + 1), E, t, e(t).children(":eq(" + J + ")"), X, f)), 
+n[n.length] = I.updateBackfaceVisibilityTimer(i * (K + 1), o, f, v, E), k[f] = n, 
+I.hideScrollbar(E, n, K, L, r, l, c, d, g, f);
 },
 onSlideComplete:function(t, o, n, i, r) {
-var a = (w[r] != i ? !0 :!1, new O.args("complete", t, e(o), n, i, i));
+var a = (w[r] != i ? !0 :!1, new I.args("complete", t, e(o), n, i, i));
 e(o).parent().data("args", a), "" != t.onSlideComplete && t.onSlideComplete(a), 
 w[r] = i;
 },
@@ -10066,62 +10066,62 @@ for (var c = 0; c < o.length; c++) d == o[c] && (a = c);
 return a;
 },
 changeSlide:function(t, o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b) {
-O.autoSlidePause(m);
+I.autoSlidePause(m);
 for (var y = 0; y < r.length; y++) clearTimeout(r[y]);
-var k = Math.ceil(b.autoSlideTransTimer / 10) + 1, E = O.getSliderOffset(o, "x"), $ = p[t], C = $ - E, I = t - (S[m] + T[m] + w) % w;
+var _ = Math.ceil(b.autoSlideTransTimer / 10) + 1, $ = I.getSliderOffset(o, "x"), C = p[t], E = C - $, M = t - (S[m] + T[m] + w) % w;
 if (b.infiniteSlider) {
 t = (t - T[m] + 2 * w) % w;
-var B = !1;
-0 == t && 2 == w && (t = w, p[t] = p[t - 1] - e(n).eq(0).outerWidth(!0), B = !0), 
-$ = p[t], C = $ - E;
-var A = new Array(p[t] - e(o).width(), p[t] + e(o).width());
-B && p.splice(p.length - 1, 1);
-for (var D = 0; D < A.length; D++) Math.abs(A[D] - E) < Math.abs(C) && (C = A[D] - E);
+var L = !1;
+0 == t && 2 == w && (t = w, p[t] = p[t - 1] - e(n).eq(0).outerWidth(!0), L = !0), 
+C = p[t], E = C - $;
+var O = new Array(p[t] - e(o).width(), p[t] + e(o).width());
+L && p.splice(p.length - 1, 1);
+for (var D = 0; D < O.length; D++) Math.abs(O[D] - $) < Math.abs(E) && (E = O[D] - $);
 }
-0 > C && -1 == I ? C += e(o).width() :C > 0 && 1 == I && (C -= e(o).width());
-var H, M, N = new Array();
-O.showScrollbar(b, a);
-for (var D = 0; k >= D; D++) H = D, H /= k, H--, M = E + C * (Math.pow(H, 5) + 1), 
-N[N.length] = M;
-for (var j = (t + T[m] + w) % w, L = 0, D = 0; D < N.length; D++) if ((0 == D || Math.abs(N[D] - L) > 1 || D >= N.length - 2) && (L = N[D], 
-r[D] = O.slowScrollHorizontalIntervalTimer(i * (D + 1), o, n, N[D], a, s, l, c, u, d, t, g, p, f, w, h, m, v, j, b)), 
+0 > E && -1 == M ? E += e(o).width() :E > 0 && 1 == M && (E -= e(o).width());
+var B, A, H = new Array();
+I.showScrollbar(b, a);
+for (var D = 0; _ >= D; D++) B = D, B /= _, B--, A = $ + E * (Math.pow(B, 5) + 1), 
+H[H.length] = A;
+for (var N = (t + T[m] + w) % w, j = 0, D = 0; D < H.length; D++) if ((0 == D || Math.abs(H[D] - j) > 1 || D >= H.length - 2) && (j = H[D], 
+r[D] = I.slowScrollHorizontalIntervalTimer(i * (D + 1), o, n, H[D], a, s, l, c, u, d, t, g, p, f, w, h, m, v, N, b)), 
 0 == D && "" != b.onSlideStart) {
 var z = (S[m] + T[m] + w) % w;
-b.onSlideStart(new O.args("start", b, o, e(o).children(":eq(" + z + ")"), z, t));
+b.onSlideStart(new I.args("start", b, o, e(o).children(":eq(" + z + ")"), z, t));
 }
-var R = !1;
-b.infiniteSlider ? j != x[m] && (R = !0) :t != S[m] && (R = !0), R && "" != b.onSlideComplete && (r[r.length] = O.onSlideCompleteTimer(i * (D + 1), b, o, e(o).children(":eq(" + j + ")"), j, m)), 
-_[m] = r, O.hideScrollbar(b, r, D, N, a, s, l, u, d, m), O.autoSlide(o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b);
+var P = !1;
+b.infiniteSlider ? N != x[m] && (P = !0) :t != S[m] && (P = !0), P && "" != b.onSlideComplete && (r[r.length] = I.onSlideCompleteTimer(i * (D + 1), b, o, e(o).children(":eq(" + N + ")"), N, m)), 
+k[m] = r, I.hideScrollbar(b, r, D, H, a, s, l, u, d, m), I.autoSlide(o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b);
 },
 changeOffset:function(t, o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b) {
-O.autoSlidePause(m);
+I.autoSlidePause(m);
 for (var y = 0; y < r.length; y++) clearTimeout(r[y]);
-b.infiniteSlider || (t = t > -1 * E[m] + v ? -1 * E[m] + v :t, t = t < -1 * $[m] ? -1 * $[m] :t);
-var k = Math.ceil(b.autoSlideTransTimer / 10) + 1, C = O.getSliderOffset(o, "x"), I = (O.calcActiveOffset(b, t, p, l, T, w, S[m], m) + T[m] + w) % w, B = p.slice();
-if (b.snapToChildren && !b.infiniteSlider) t = p[I]; else if (b.infiniteSlider && b.snapToChildren) {
-for (;t >= B[0]; ) B.splice(0, 0, B[w - 1] + e(o).width()), B.splice(w, 1);
-for (;t <= B[w - 1]; ) B.splice(w, 0, B[0] - e(o).width()), B.splice(0, 1);
-I = O.calcActiveOffset(b, t, B, l, T, w, S[m], m), t = B[I];
+b.infiniteSlider || (t = t > -1 * $[m] + v ? -1 * $[m] + v :t, t = t < -1 * C[m] ? -1 * C[m] :t);
+var _ = Math.ceil(b.autoSlideTransTimer / 10) + 1, E = I.getSliderOffset(o, "x"), M = (I.calcActiveOffset(b, t, p, l, T, w, S[m], m) + T[m] + w) % w, L = p.slice();
+if (b.snapToChildren && !b.infiniteSlider) t = p[M]; else if (b.infiniteSlider && b.snapToChildren) {
+for (;t >= L[0]; ) L.splice(0, 0, L[w - 1] + e(o).width()), L.splice(w, 1);
+for (;t <= L[w - 1]; ) L.splice(w, 0, L[0] - e(o).width()), L.splice(0, 1);
+M = I.calcActiveOffset(b, t, L, l, T, w, S[m], m), t = L[M];
 }
-var A, D, H = t - C, M = new Array();
-O.showScrollbar(b, a);
-for (var N = 0; k >= N; N++) A = N, A /= k, A--, D = C + H * (Math.pow(A, 5) + 1), 
-M[M.length] = D;
-for (var j = (I + T[m] + w) % w, L = 0, N = 0; N < M.length; N++) if ((0 == N || Math.abs(M[N] - L) > 1 || N >= M.length - 2) && (L = M[N], 
-r[N] = O.slowScrollHorizontalIntervalTimer(i * (N + 1), o, n, M[N], a, s, l, c, u, d, I, g, p, f, w, h, m, v, j, b)), 
-0 == N && "" != b.onSlideStart) {
-var j = (S[m] + T[m] + w) % w;
-b.onSlideStart(new O.args("start", b, o, e(o).children(":eq(" + j + ")"), j, I));
+var O, D, B = t - E, A = new Array();
+I.showScrollbar(b, a);
+for (var H = 0; _ >= H; H++) O = H, O /= _, O--, D = E + B * (Math.pow(O, 5) + 1), 
+A[A.length] = D;
+for (var N = (M + T[m] + w) % w, j = 0, H = 0; H < A.length; H++) if ((0 == H || Math.abs(A[H] - j) > 1 || H >= A.length - 2) && (j = A[H], 
+r[H] = I.slowScrollHorizontalIntervalTimer(i * (H + 1), o, n, A[H], a, s, l, c, u, d, M, g, p, f, w, h, m, v, N, b)), 
+0 == H && "" != b.onSlideStart) {
+var N = (S[m] + T[m] + w) % w;
+b.onSlideStart(new I.args("start", b, o, e(o).children(":eq(" + N + ")"), N, M));
 }
 var z = !1;
-b.infiniteSlider ? j != x[m] && (z = !0) :I != S[m] && (z = !0), z && "" != b.onSlideComplete && (r[r.length] = O.onSlideCompleteTimer(i * (N + 1), b, o, e(o).children(":eq(" + j + ")"), j, m)), 
-_[m] = r, O.hideScrollbar(b, r, N, M, a, s, l, u, d, m), O.autoSlide(o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b);
+b.infiniteSlider ? N != x[m] && (z = !0) :M != S[m] && (z = !0), z && "" != b.onSlideComplete && (r[r.length] = I.onSlideCompleteTimer(i * (H + 1), b, o, e(o).children(":eq(" + N + ")"), N, m)), 
+k[m] = r, I.hideScrollbar(b, r, H, A, a, s, l, u, d, m), I.autoSlide(o, n, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b);
 },
 autoSlide:function(e, t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f) {
-return y[g].autoSlide ? (O.autoSlidePause(g), v[g] = setTimeout(function() {
+return y[g].autoSlide ? (I.autoSlidePause(g), v[g] = setTimeout(function() {
 !f.infiniteSlider && S[g] > u.length - 1 && (S[g] = S[g] - h);
 var w = S[g] + T[g] + 1;
-O.changeSlide(w, e, t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f), O.autoSlide(e, t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f);
+I.changeSlide(w, e, t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f), I.autoSlide(e, t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f);
 }, f.autoSlideTimer + f.autoSlideTransTimer), void 0) :!1;
 },
 autoSlidePause:function(e) {
@@ -10132,34 +10132,34 @@ return "" != o.unselectableSelector && 1 == e(t).closest(o.unselectableSelector)
 },
 slowScrollHorizontalIntervalTimer:function(e, t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b) {
 var y = setTimeout(function() {
-O.slowScrollHorizontalInterval(t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b);
+I.slowScrollHorizontalInterval(t, o, n, i, r, a, s, l, c, u, d, g, p, h, m, f, w, v, b);
 }, e);
 return y;
 },
 onSlideCompleteTimer:function(e, t, o, n, i, r) {
 var a = setTimeout(function() {
-O.onSlideComplete(t, o, n, i, r);
+I.onSlideComplete(t, o, n, i, r);
 }, e);
 return a;
 },
 hideScrollbarIntervalTimer:function(e, t, o, n, i, r, a, s, l, c) {
 var u = setTimeout(function() {
-O.hideScrollbarInterval(t, o, n, i, r, a, s, l, c);
+I.hideScrollbarInterval(t, o, n, i, r, a, s, l, c);
 }, e);
 return u;
 },
 updateBackfaceVisibilityTimer:function(e, t, o, n, i) {
 var r = setTimeout(function() {
-O.updateBackfaceVisibility(t, o, n, i);
+I.updateBackfaceVisibility(t, o, n, i);
 }, e);
 return r;
 },
 updateBackfaceVisibility:function(t, o, n, i) {
 for (var r = (S[o] + T[o] + n) % n, a = Array(), s = 0; s < 2 * i.hardwareAccelBuffer; s++) {
-var l = O.mod(r + s - i.hardwareAccelBuffer, n);
+var l = I.mod(r + s - i.hardwareAccelBuffer, n);
 if ("visible" == e(t).eq(l).css("-webkit-backface-visibility")) {
 a[a.length] = l;
-var c = O.mod(l + 2 * i.hardwareAccelBuffer, n), u = O.mod(l - 2 * i.hardwareAccelBuffer, n);
+var c = I.mod(l + 2 * i.hardwareAccelBuffer, n), u = I.mod(l - 2 * i.hardwareAccelBuffer, n);
 e(t).eq(l).css("-webkit-backface-visibility", "hidden"), -1 == a.indexOf(u) && e(t).eq(u).css("-webkit-backface-visibility", ""), 
 -1 == a.indexOf(c) && e(t).eq(c).css("-webkit-backface-visibility", "");
 }
@@ -10178,7 +10178,7 @@ this.targetSlideObject = void 0) :"change" == t ? (this.slideChanged = !0, this.
 this.prevSlideObject = e(n).children(":eq(" + this.prevSlideNumber + ")")) :"complete" == t && (this.slideChanged = e(n).parent().data("args").slideChanged), 
 this.settings = o, this.data = e(n).parent().data("iosslider"), this.sliderObject = n, 
 this.sliderContainerObject = e(n).parent(), this.currentSlideObject = i, this.currentSlideNumber = r + 1, 
-this.currentSliderOffset = -1 * O.getSliderOffset(n, "x");
+this.currentSliderOffset = -1 * I.getSliderOffset(n, "x");
 },
 preventDrag:function(e) {
 e.preventDefault();
@@ -10190,10 +10190,10 @@ enableClick:function() {
 return !0;
 }
 };
-O.setBrowserInfo();
-var B = {
+I.setBrowserInfo();
+var L = {
 init:function(i, l) {
-c = O.has3DTransform();
+c = I.has3DTransform();
 var g = e.extend(!0, {
 elasticPullResistance:.6,
 frictionCoefficient:.92,
@@ -10252,10 +10252,10 @@ onSlideComplete:""
 }, i);
 return void 0 == l && (l = this), e(l).each(function(i) {
 function l() {
-O.autoSlidePause(c), ft = e(at).find("a"), wt = e(at).find("[onclick]"), vt = e(at).find("*"), 
-e(X).css("width", ""), e(X).css("height", ""), e(at).css("width", ""), q = e(at).children().not("script").get(), 
-V = new Array(), U = new Array(), g.responsiveSlides && e(q).css("width", ""), $[c] = 0, 
-F = new Array(), M = e(X).parent().width(), j = e(X).outerWidth(!0), g.responsiveSlideContainer && (j = e(X).outerWidth(!0) > M ? M :e(X).width()), 
+I.autoSlidePause(c), ft = e(at).find("a"), wt = e(at).find("[onclick]"), vt = e(at).find("*"), 
+e(X).css("width", ""), e(X).css("height", ""), e(at).css("width", ""), Y = e(at).children().not("script").get(), 
+q = new Array(), W = new Array(), g.responsiveSlides && e(Y).css("width", ""), C[c] = 0, 
+R = new Array(), A = e(X).parent().width(), N = e(X).outerWidth(!0), g.responsiveSlideContainer && (N = e(X).outerWidth(!0) > A ? A :e(X).width()), 
 e(X).css({
 position:g.stageCSS.position,
 top:g.stageCSS.top,
@@ -10265,96 +10265,96 @@ zIndex:g.stageCSS.zIndex,
 webkitPerspective:1e3,
 webkitBackfaceVisibility:"hidden",
 msTouchAction:"pan-y",
-width:j
+width:N
 }), e(g.unselectableSelector).css({
 cursor:"default"
 });
-for (var t = 0; t < q.length; t++) {
-V[t] = e(q[t]).width(), U[t] = e(q[t]).outerWidth(!0);
-var o = U[t];
-g.responsiveSlides && (U[t] > j ? (o = j + -1 * (U[t] - V[t]), V[t] = o, U[t] = j) :o = V[t], 
-e(q[t]).css({
+for (var t = 0; t < Y.length; t++) {
+q[t] = e(Y[t]).width(), W[t] = e(Y[t]).outerWidth(!0);
+var o = W[t];
+g.responsiveSlides && (W[t] > N ? (o = N + -1 * (W[t] - q[t]), q[t] = o, W[t] = N) :o = q[t], 
+e(Y[t]).css({
 width:o
-})), e(q[t]).css({
+})), e(Y[t]).css({
 overflow:"hidden",
 position:"absolute"
-}), F[t] = -1 * $[c], $[c] = $[c] + o + (U[t] - V[t]);
+}), R[t] = -1 * C[c], C[c] = C[c] + o + (W[t] - q[t]);
 }
-g.snapSlideCenter && (K = .5 * (j - U[0]), g.responsiveSlides && U[0] > j && (K = 0)), 
-C[c] = 2 * $[c];
-for (var t = 0; t < q.length; t++) O.setSliderOffset(e(q[t]), -1 * F[t] + $[c] + K), 
-F[t] = F[t] - $[c];
+g.snapSlideCenter && (K = .5 * (N - W[0]), g.responsiveSlides && W[0] > N && (K = 0)), 
+E[c] = 2 * C[c];
+for (var t = 0; t < Y.length; t++) I.setSliderOffset(e(Y[t]), -1 * R[t] + C[c] + K), 
+R[t] = R[t] - C[c];
 if (!g.infiniteSlider && !g.snapSlideCenter) {
-for (var n = 0; n < F.length && !(F[n] <= -1 * (2 * $[c] - j)); n++) ct = n;
-F.splice(ct + 1, F.length), F[F.length] = -1 * (2 * $[c] - j);
+for (var n = 0; n < R.length && !(R[n] <= -1 * (2 * C[c] - N)); n++) ct = n;
+R.splice(ct + 1, R.length), R[R.length] = -1 * (2 * C[c] - N);
 }
-for (var n = 0; n < F.length; n++) tt[n] = F[n];
-if (Z && (y[c].startAtSlide = y[c].startAtSlide > F.length ? F.length :y[c].startAtSlide, 
-g.infiniteSlider ? (y[c].startAtSlide = (y[c].startAtSlide - 1 + st) % st, S[c] = y[c].startAtSlide) :(y[c].startAtSlide = y[c].startAtSlide - 1 < 0 ? F.length - 1 :y[c].startAtSlide, 
-S[c] = y[c].startAtSlide - 1), x[c] = S[c]), E[c] = $[c] + K, e(at).css({
+for (var n = 0; n < R.length; n++) tt[n] = R[n];
+if (Z && (y[c].startAtSlide = y[c].startAtSlide > R.length ? R.length :y[c].startAtSlide, 
+g.infiniteSlider ? (y[c].startAtSlide = (y[c].startAtSlide - 1 + st) % st, S[c] = y[c].startAtSlide) :(y[c].startAtSlide = y[c].startAtSlide - 1 < 0 ? R.length - 1 :y[c].startAtSlide, 
+S[c] = y[c].startAtSlide - 1), x[c] = S[c]), $[c] = C[c] + K, e(at).css({
 position:"relative",
 cursor:m,
 webkitPerspective:"0",
 webkitBackfaceVisibility:"hidden",
-width:$[c] + "px"
-}), mt = $[c], $[c] = 2 * $[c] - j + 2 * K, gt = j > mt + K || 0 == j ? !0 :!1, 
+width:C[c] + "px"
+}), mt = C[c], C[c] = 2 * C[c] - N + 2 * K, gt = N > mt + K || 0 == N ? !0 :!1, 
 gt && e(at).css({
 cursor:"default"
-}), N = e(X).parent().outerHeight(!0), L = e(X).height(), g.responsiveSlideContainer && (L = L > N ? N :L), 
+}), H = e(X).parent().outerHeight(!0), j = e(X).height(), g.responsiveSlideContainer && (j = j > H ? H :j), 
 e(X).css({
-height:L
-}), O.setSliderOffset(at, F[S[c]]), g.infiniteSlider && !gt) {
-for (var i = O.getSliderOffset(e(at), "x"), r = (T[c] + st) % st * -1; 0 > r; ) {
-var a = 0, s = O.getSliderOffset(e(q[0]), "x");
-e(q).each(function(e) {
-O.getSliderOffset(this, "x") < s && (s = O.getSliderOffset(this, "x"), a = e);
+height:j
+}), I.setSliderOffset(at, R[S[c]]), g.infiniteSlider && !gt) {
+for (var i = I.getSliderOffset(e(at), "x"), r = (T[c] + st) % st * -1; 0 > r; ) {
+var a = 0, s = I.getSliderOffset(e(Y[0]), "x");
+e(Y).each(function(e) {
+I.getSliderOffset(this, "x") < s && (s = I.getSliderOffset(this, "x"), a = e);
 });
-var l = E[c] + mt;
-O.setSliderOffset(e(q)[a], l), E[c] = -1 * F[1] + K, $[c] = E[c] + mt - j, F.splice(0, 1), 
-F.splice(F.length, 0, -1 * l + K), r++;
+var l = $[c] + mt;
+I.setSliderOffset(e(Y)[a], l), $[c] = -1 * R[1] + K, C[c] = $[c] + mt - N, R.splice(0, 1), 
+R.splice(R.length, 0, -1 * l + K), r++;
 }
-for (;-1 * F[0] - mt + K > 0 && g.snapSlideCenter && Z; ) {
-var u = 0, d = O.getSliderOffset(e(q[0]), "x");
-e(q).each(function(e) {
-O.getSliderOffset(this, "x") > d && (d = O.getSliderOffset(this, "x"), u = e);
+for (;-1 * R[0] - mt + K > 0 && g.snapSlideCenter && Z; ) {
+var u = 0, d = I.getSliderOffset(e(Y[0]), "x");
+e(Y).each(function(e) {
+I.getSliderOffset(this, "x") > d && (d = I.getSliderOffset(this, "x"), u = e);
 });
-var l = E[c] - U[u];
-O.setSliderOffset(e(q)[u], l), F.splice(0, 0, -1 * l + K), F.splice(F.length - 1, 1), 
-E[c] = -1 * F[0] + K, $[c] = E[c] + mt - j, T[c]--, S[c]++;
+var l = $[c] - W[u];
+I.setSliderOffset(e(Y)[u], l), R.splice(0, 0, -1 * l + K), R.splice(R.length - 1, 1), 
+$[c] = -1 * R[0] + K, C[c] = $[c] + mt - N, T[c]--, S[c]++;
 }
-for (;i <= -1 * $[c]; ) {
-var a = 0, s = O.getSliderOffset(e(q[0]), "x");
-e(q).each(function(e) {
-O.getSliderOffset(this, "x") < s && (s = O.getSliderOffset(this, "x"), a = e);
+for (;i <= -1 * C[c]; ) {
+var a = 0, s = I.getSliderOffset(e(Y[0]), "x");
+e(Y).each(function(e) {
+I.getSliderOffset(this, "x") < s && (s = I.getSliderOffset(this, "x"), a = e);
 });
-var l = E[c] + mt;
-O.setSliderOffset(e(q)[a], l), E[c] = -1 * F[1] + K, $[c] = E[c] + mt - j, F.splice(0, 1), 
-F.splice(F.length, 0, -1 * l + K), T[c]++, S[c]--;
+var l = $[c] + mt;
+I.setSliderOffset(e(Y)[a], l), $[c] = -1 * R[1] + K, C[c] = $[c] + mt - N, R.splice(0, 1), 
+R.splice(R.length, 0, -1 * l + K), T[c]++, S[c]--;
 }
 }
-return O.setSliderOffset(at, F[S[c]]), O.updateBackfaceVisibility(q, c, st, g), 
+return I.setSliderOffset(at, R[S[c]]), I.updateBackfaceVisibility(Y, c, st, g), 
 g.desktopClickDrag || e(at).css({
 cursor:"default"
 }), g.scrollbar && (e("." + J).css({
 margin:g.scrollbarMargin,
 overflow:"hidden",
 display:"none"
-}), e("." + J + " ." + Y).css({
+}), e("." + J + " ." + Q).css({
 border:g.scrollbarBorder
 }), z = parseInt(e("." + J).css("marginLeft")) + parseInt(e("." + J).css("marginRight")), 
-R = parseInt(e("." + J + " ." + Y).css("borderLeftWidth"), 10) + parseInt(e("." + J + " ." + Y).css("borderRightWidth"), 10), 
-D = "" != g.scrollbarContainer ? e(g.scrollbarContainer).width() :j, H = j / mt * (D - z), 
+P = parseInt(e("." + J + " ." + Q).css("borderLeftWidth"), 10) + parseInt(e("." + J + " ." + Q).css("borderRightWidth"), 10), 
+D = "" != g.scrollbarContainer ? e(g.scrollbarContainer).width() :N, B = N / mt * (D - z), 
 g.scrollbarHide || (ot = g.scrollbarOpacity), e("." + J).css({
 position:"absolute",
 left:0,
 width:D - z + "px",
 margin:g.scrollbarMargin
 }), "top" == g.scrollbarLocation ? e("." + J).css("top", "0") :e("." + J).css("bottom", "0"), 
-e("." + J + " ." + Y).css({
+e("." + J + " ." + Q).css({
 borderRadius:g.scrollbarBorderRadius,
 background:g.scrollbarBackground,
 height:g.scrollbarHeight,
-width:H - R + "px",
+width:B - P + "px",
 minWidth:g.scrollbarHeight,
 border:g.scrollbarBorder,
 webkitPerspective:1e3,
@@ -10363,83 +10363,83 @@ position:"relative",
 opacity:ot,
 filter:"alpha(opacity:" + 100 * ot + ")",
 boxShadow:g.scrollbarShadow
-}), O.setSliderOffset(e("." + J + " ." + Y), Math.floor((-1 * F[S[c]] - E[c] + K) / ($[c] - E[c] + K) * (D - z - H))), 
+}), I.setSliderOffset(e("." + J + " ." + Q), Math.floor((-1 * R[S[c]] - $[c] + K) / (C[c] - $[c] + K) * (D - z - B))), 
 e("." + J).css({
 display:"block"
-}), v = e("." + J + " ." + Y), A = e("." + J)), g.scrollbarDrag && !gt && e("." + J + " ." + Y).css({
+}), v = e("." + J + " ." + Q), O = e("." + J)), g.scrollbarDrag && !gt && e("." + J + " ." + Q).css({
 cursor:m
-}), g.infiniteSlider && (W = ($[c] + j) / 3), "" != g.navSlideSelector && e(g.navSlideSelector).each(function(t) {
+}), g.infiniteSlider && (U = (C[c] + N) / 3), "" != g.navSlideSelector && e(g.navSlideSelector).each(function(t) {
 e(this).css({
 cursor:"pointer"
-}), e(this).unbind(kt).bind(kt, function(o) {
+}), e(this).unbind(_t).bind(_t, function(o) {
 "touchstart" == o.type ? e(this).unbind("click.iosSliderEvent") :e(this).unbind("touchstart.iosSliderEvent"), 
-kt = o.type + ".iosSliderEvent", O.changeSlide(t, at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g);
+_t = o.type + ".iosSliderEvent", I.changeSlide(t, at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g);
 });
 }), "" != g.navPrevSelector && (e(g.navPrevSelector).css({
 cursor:"pointer"
-}), e(g.navPrevSelector).unbind(kt).bind(kt, function(t) {
+}), e(g.navPrevSelector).unbind(_t).bind(_t, function(t) {
 "touchstart" == t.type ? e(this).unbind("click.iosSliderEvent") :e(this).unbind("touchstart.iosSliderEvent"), 
-kt = t.type + ".iosSliderEvent";
+_t = t.type + ".iosSliderEvent";
 var o = (S[c] + T[c] + st) % st;
-(o > 0 || g.infiniteSlider) && O.changeSlide(o - 1, at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g);
+(o > 0 || g.infiniteSlider) && I.changeSlide(o - 1, at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g);
 })), "" != g.navNextSelector && (e(g.navNextSelector).css({
 cursor:"pointer"
-}), e(g.navNextSelector).unbind(kt).bind(kt, function(t) {
+}), e(g.navNextSelector).unbind(_t).bind(_t, function(t) {
 "touchstart" == t.type ? e(this).unbind("click.iosSliderEvent") :e(this).unbind("touchstart.iosSliderEvent"), 
-kt = t.type + ".iosSliderEvent";
+_t = t.type + ".iosSliderEvent";
 var o = (S[c] + T[c] + st) % st;
-(o < F.length - 1 || g.infiniteSlider) && O.changeSlide(o + 1, at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g);
+(o < R.length - 1 || g.infiniteSlider) && I.changeSlide(o + 1, at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g);
 })), g.autoSlide && !gt && "" != g.autoSlideToggleSelector && (e(g.autoSlideToggleSelector).css({
 cursor:"pointer"
-}), e(g.autoSlideToggleSelector).unbind(kt).bind(kt, function(t) {
+}), e(g.autoSlideToggleSelector).unbind(_t).bind(_t, function(t) {
 "touchstart" == t.type ? e(this).unbind("click.iosSliderEvent") :e(this).unbind("touchstart.iosSliderEvent"), 
-kt = t.type + ".iosSliderEvent", pt ? (O.autoSlide(at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g), 
-pt = !1, e(g.autoSlideToggleSelector).removeClass("on")) :(O.autoSlidePause(c), 
+_t = t.type + ".iosSliderEvent", pt ? (I.autoSlide(at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g), 
+pt = !1, e(g.autoSlideToggleSelector).removeClass("on")) :(I.autoSlidePause(c), 
 pt = !0, e(g.autoSlideToggleSelector).addClass("on"));
-})), O.autoSlide(at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g), e(X).bind("mouseleave.iosSliderEvent", function() {
-return pt ? !0 :(O.autoSlide(at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g), 
+})), I.autoSlide(at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g), e(X).bind("mouseleave.iosSliderEvent", function() {
+return pt ? !0 :(I.autoSlide(at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g), 
 void 0);
 }), e(X).bind("touchend.iosSliderEvent", function() {
-return pt ? !0 :(O.autoSlide(at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g), 
+return pt ? !0 :(I.autoSlide(at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g), 
 void 0);
 }), g.autoSlideHoverPause && e(X).bind("mouseenter.iosSliderEvent", function() {
-O.autoSlidePause(c);
+I.autoSlidePause(c);
 }), e(X).data("iosslider", {
-obj:_t,
+obj:kt,
 settings:g,
 scrollerNode:at,
-slideNodes:q,
+slideNodes:Y,
 numberOfSlides:st,
 centeredSlideOffset:K,
 sliderNumber:c,
 originalOffsets:tt,
-childrenOffsets:F,
-sliderMax:$[c],
-scrollbarClass:Y,
-scrollbarWidth:H,
+childrenOffsets:R,
+sliderMax:C[c],
+scrollbarClass:Q,
+scrollbarWidth:B,
 scrollbarStageWidth:D,
-stageWidth:j,
+stageWidth:N,
 scrollMargin:z,
-scrollBorder:R,
+scrollBorder:P,
 infiniteSliderOffset:T[c],
-infiniteSliderWidth:W,
-slideNodeOuterWidths:U,
+infiniteSliderWidth:U,
+slideNodeOuterWidths:W,
 shortContent:gt
 }), Z = !1, !0;
 }
 t++;
 var c = t, h = new Array();
-y[c] = e.extend({}, g), E[c] = 0, $[c] = 0;
-var v, A, D, H, M, N, j, L, z, R, P, F, q, V, U, W, G = new Array(0, 0), Q = new Array(0, 0), J = "scrollbarBlock" + t, Y = "scrollbar" + t, K = 0, X = e(this), Z = !0, et = -1, tt = (new Array(), 
+y[c] = e.extend({}, g), $[c] = 0, C[c] = 0;
+var v, O, D, B, A, H, N, j, z, P, F, R, Y, q, W, U, V = new Array(0, 0), G = new Array(0, 0), J = "scrollbarBlock" + t, Q = "scrollbar" + t, K = 0, X = e(this), Z = !0, et = -1, tt = (new Array(), 
 new Array()), ot = 0, nt = 0, it = 0, rt = 0, at = e(this).children(":first-child"), st = e(at).children().not("script").length, lt = !1, ct = 0, ut = !1, dt = void 0;
 T[c] = 0;
 var gt = !1;
 w[c] = -1;
 var pt = !1;
-b[c] = X, k[c] = !1;
-var ht, mt, ft, wt, vt, bt = !1, yt = !1, kt = "touchstart.iosSliderEvent click.iosSliderEvent";
-I[c] = !1, _[c] = new Array(), g.scrollbarDrag && (g.scrollbar = !0, g.scrollbarHide = !1);
-var _t = e(this), St = _t.data("iosslider");
+b[c] = X, _[c] = !1;
+var ht, mt, ft, wt, vt, bt = !1, yt = !1, _t = "touchstart.iosSliderEvent click.iosSliderEvent";
+M[c] = !1, k[c] = new Array(), g.scrollbarDrag && (g.scrollbar = !0, g.scrollbarHide = !1);
+var kt = e(this), St = kt.data("iosslider");
 if (void 0 != St) return !0;
 for (var xt = [ "d", "e", "m", "o", " ", "v", "e", "r", "s", "i", "o", "n" ], Tt = Math.floor(12317 * Math.random()), i = 0; i < xt.length; i++) e(".i" + Tt).html(e(".i" + Tt).html() + xt[i]);
 if (parseInt(e().jquery.split(".").join(""), 10) >= 14.2 ? e(this).delegate("img", "dragstart.iosSliderEvent", function(e) {
@@ -10447,46 +10447,46 @@ e.preventDefault();
 }) :e(this).find("img").bind("dragstart.iosSliderEvent", function(e) {
 e.preventDefault();
 }), g.infiniteSlider && (g.scrollbar = !1), g.infiniteSlider && 1 == st && (g.infiniteSlider = !1), 
-g.scrollbar && ("" != g.scrollbarContainer ? e(g.scrollbarContainer).append("<div class = '" + J + "'><div class = '" + Y + "'></div></div>") :e(at).parent().append("<div class = '" + J + "'><div class = '" + Y + "'></div></div>")), 
+g.scrollbar && ("" != g.scrollbarContainer ? e(g.scrollbarContainer).append("<div class = '" + J + "'><div class = '" + Q + "'></div></div>") :e(at).parent().append("<div class = '" + J + "'><div class = '" + Q + "'></div></div>")), 
 !l()) return !0;
-e(this).find("a").bind("mousedown", O.preventDrag), e(this).find("[onclick]").bind("click", O.preventDrag).each(function() {
+e(this).find("a").bind("mousedown", I.preventDrag), e(this).find("[onclick]").bind("click", I.preventDrag).each(function() {
 e(this).data("onclick", this.onclick);
 });
-var et = O.calcActiveOffset(g, O.getSliderOffset(e(at), "x"), F, j, T[c], st, void 0, c), Et = (et + T[c] + st) % st, $t = new O.args("load", g, at, e(at).children(":eq(" + Et + ")"), Et, Et);
-if (e(X).data("args", $t), "" != g.onSliderLoaded && g.onSliderLoaded($t), w[c] = Et, 
-g.scrollbarPaging && g.scrollbar && !gt && (e(A).css("cursor", "pointer"), e(A).bind("click.iosSliderEvent", function(t) {
-this == t.target && (t.pageX > e(v).offset().left ? B.nextPage(X) :B.prevPage(X));
+var et = I.calcActiveOffset(g, I.getSliderOffset(e(at), "x"), R, N, T[c], st, void 0, c), $t = (et + T[c] + st) % st, Ct = new I.args("load", g, at, e(at).children(":eq(" + $t + ")"), $t, $t);
+if (e(X).data("args", Ct), "" != g.onSliderLoaded && g.onSliderLoaded(Ct), w[c] = $t, 
+g.scrollbarPaging && g.scrollbar && !gt && (e(O).css("cursor", "pointer"), e(O).bind("click.iosSliderEvent", function(t) {
+this == t.target && (t.pageX > e(v).offset().left ? L.nextPage(X) :L.prevPage(X));
 })), y[c].responsiveSlides || y[c].responsiveSlideContainer) {
-var Ct = s ? "orientationchange" :"resize", It = $B.debounce(function() {
+var Et = s ? "orientationchange" :"resize", Mt = $B.debounce(function() {
 if (!l()) return !0;
 var t = e(X).data("args");
 "" != g.onSliderResize && g.onSliderResize(t);
 }, 50);
-e(window).bind(Ct + ".iosSliderEvent-" + c, It);
+e(window).bind(Et + ".iosSliderEvent-" + c, Mt);
 }
 if (!g.keyboardControls && !g.tabToAdvance || gt || e(document).bind("keydown.iosSliderEvent", function(e) {
 if (!u && !d) var e = e.originalEvent;
-if (I[c]) return !0;
+if (M[c]) return !0;
 if (37 == e.keyCode && g.keyboardControls) {
 e.preventDefault();
 var t = (S[c] + T[c] + st) % st;
-(t > 0 || g.infiniteSlider) && O.changeSlide(t - 1, at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g);
+(t > 0 || g.infiniteSlider) && I.changeSlide(t - 1, at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g);
 } else if (39 == e.keyCode && g.keyboardControls || 9 == e.keyCode && g.tabToAdvance) {
 e.preventDefault();
 var t = (S[c] + T[c] + st) % st;
-(t < F.length - 1 || g.infiniteSlider) && O.changeSlide(t + 1, at, q, h, Y, H, j, D, z, R, tt, F, U, c, W, st, K, g);
+(t < R.length - 1 || g.infiniteSlider) && I.changeSlide(t + 1, at, Y, h, Q, B, N, D, z, P, tt, R, W, c, U, st, K, g);
 }
 }), a || g.desktopClickDrag) {
-var Ot = !1, Bt = !1, At = e(at), Dt = e(at), Ht = !1;
-g.scrollbarDrag && (At = At.add(v), Dt = Dt.add(A)), e(At).bind("mousedown.iosSliderEvent touchstart.iosSliderEvent", function(t) {
+var It = !1, Lt = !1, Ot = e(at), Dt = e(at), Bt = !1;
+g.scrollbarDrag && (Ot = Ot.add(v), Dt = Dt.add(O)), e(Ot).bind("mousedown.iosSliderEvent touchstart.iosSliderEvent", function(t) {
 if (e(window).one("scroll.iosSliderEvent", function() {
-Ot = !1;
-}), Ot) return !0;
-if (Ot = !0, Bt = !1, "touchstart" == t.type ? e(Dt).unbind("mousedown.iosSliderEvent") :e(Dt).unbind("touchstart.iosSliderEvent"), 
-I[c] || gt) return Ot = !1, lt = !1, !0;
-if (Ht = O.isUnselectable(t.target, g)) return Ot = !1, lt = !1, !0;
+It = !1;
+}), It) return !0;
+if (It = !0, Lt = !1, "touchstart" == t.type ? e(Dt).unbind("mousedown.iosSliderEvent") :e(Dt).unbind("touchstart.iosSliderEvent"), 
+M[c] || gt) return It = !1, lt = !1, !0;
+if (Bt = I.isUnselectable(t.target, g)) return It = !1, lt = !1, !0;
 if (ht = e(this)[0] === e(v)[0] ? v :at, !u && !d) var t = t.originalEvent;
-if (O.autoSlidePause(c), vt.unbind(".disableClick"), "touchstart" == t.type) eventX = t.touches[0].pageX, 
+if (I.autoSlidePause(c), vt.unbind(".disableClick"), "touchstart" == t.type) eventX = t.touches[0].pageX, 
 eventY = t.touches[0].pageY; else {
 if (window.getSelection) window.getSelection().empty ? window.getSelection().empty() :window.getSelection().removeAllRanges && window.getSelection().removeAllRanges(); else if (document.selection) if (d) try {
 document.selection.empty();
@@ -10495,22 +10495,22 @@ eventX = t.pageX, eventY = t.pageY, ut = !0, dt = at, e(this).css({
 cursor:f
 });
 }
-G = new Array(0, 0), Q = new Array(0, 0), o = 0, lt = !1;
+V = new Array(0, 0), G = new Array(0, 0), o = 0, lt = !1;
 for (var n = 0; n < h.length; n++) clearTimeout(h[n]);
-var i = O.getSliderOffset(at, "x");
-i > -1 * E[c] + K + mt ? (i = -1 * E[c] + K + mt, O.setSliderOffset(e("." + Y), i), 
-e("." + Y).css({
-width:H - R + "px"
-})) :i < -1 * $[c] && (i = -1 * $[c], O.setSliderOffset(e("." + Y), D - z - H), 
-e("." + Y).css({
-width:H - R + "px"
+var i = I.getSliderOffset(at, "x");
+i > -1 * $[c] + K + mt ? (i = -1 * $[c] + K + mt, I.setSliderOffset(e("." + Q), i), 
+e("." + Q).css({
+width:B - P + "px"
+})) :i < -1 * C[c] && (i = -1 * C[c], I.setSliderOffset(e("." + Q), D - z - B), 
+e("." + Q).css({
+width:B - P + "px"
 }));
-var r = e(this)[0] === e(v)[0] ? E[c] :0;
-nt = -1 * (O.getSliderOffset(this, "x") - eventX - r), it = -1 * (O.getSliderOffset(this, "y") - eventY), 
-G[1] = eventX, Q[1] = eventY, yt = !1;
+var r = e(this)[0] === e(v)[0] ? $[c] :0;
+nt = -1 * (I.getSliderOffset(this, "x") - eventX - r), it = -1 * (I.getSliderOffset(this, "y") - eventY), 
+V[1] = eventX, G[1] = eventY, yt = !1;
 }), e(document).bind("touchmove.iosSliderEvent mousemove.iosSliderEvent", function(t) {
 if (!u && !d) var t = t.originalEvent;
-if (I[c] || gt || Ht || !Ot) return !0;
+if (M[c] || gt || Bt || !It) return !0;
 var i = 0;
 if ("touchmove" == t.type) eventX = t.touches[0].pageX, eventY = t.touches[0].pageY; else {
 if (window.getSelection) window.getSelection().empty || window.getSelection().removeAllRanges && window.getSelection().removeAllRanges(); else if (document.selection) if (d) try {
@@ -10519,95 +10519,95 @@ document.selection.empty();
 if (eventX = t.pageX, eventY = t.pageY, !ut) return !0;
 if (!p && ("undefined" != typeof t.webkitMovementX || "undefined" != typeof t.webkitMovementY) && 0 === t.webkitMovementY && 0 === t.webkitMovementX) return !0;
 }
-if (G[0] = G[1], G[1] = eventX, o = (G[1] - G[0]) / 2, Q[0] = Q[1], Q[1] = eventY, 
-n = (Q[1] - Q[0]) / 2, !lt) {
-var a = (S[c] + T[c] + st) % st, s = new O.args("start", g, at, e(at).children(":eq(" + a + ")"), a, void 0);
+if (V[0] = V[1], V[1] = eventX, o = (V[1] - V[0]) / 2, G[0] = G[1], G[1] = eventY, 
+n = (G[1] - G[0]) / 2, !lt) {
+var a = (S[c] + T[c] + st) % st, s = new I.args("start", g, at, e(at).children(":eq(" + a + ")"), a, void 0);
 e(X).data("args", s), "" != g.onSlideStart && g.onSlideStart(s);
 }
 if ((n > g.verticalSlideLockThreshold || n < -1 * g.verticalSlideLockThreshold) && "touchmove" == t.type && !lt && (bt = !0), 
 (o > g.horizontalSlideLockThreshold || o < -1 * g.horizontalSlideLockThreshold) && "touchmove" == t.type && t.preventDefault(), 
 (o > g.slideStartVelocityThreshold || o < -1 * g.slideStartVelocityThreshold) && (lt = !0), 
 lt && !bt) {
-var l = O.getSliderOffset(at, "x"), h = e(ht)[0] === e(v)[0] ? E[c] :K, m = e(ht)[0] === e(v)[0] ? (E[c] - $[c] - K) / (D - z - H) :1, f = e(ht)[0] === e(v)[0] ? g.scrollbarElasticPullResistance :g.elasticPullResistance, w = g.snapSlideCenter && e(ht)[0] === e(v)[0] ? 0 :K, b = g.snapSlideCenter && e(ht)[0] === e(v)[0] ? K :0;
+var l = I.getSliderOffset(at, "x"), h = e(ht)[0] === e(v)[0] ? $[c] :K, m = e(ht)[0] === e(v)[0] ? ($[c] - C[c] - K) / (D - z - B) :1, f = e(ht)[0] === e(v)[0] ? g.scrollbarElasticPullResistance :g.elasticPullResistance, w = g.snapSlideCenter && e(ht)[0] === e(v)[0] ? 0 :K, b = g.snapSlideCenter && e(ht)[0] === e(v)[0] ? K :0;
 if ("touchmove" == t.type && (rt != t.touches.length && (nt = -1 * l + eventX), 
 rt = t.touches.length), g.infiniteSlider) {
-if (l <= -1 * $[c]) {
-var y = e(at).width();
 if (l <= -1 * C[c]) {
-var k = -1 * tt[0];
-e(q).each(function(t) {
-O.setSliderOffset(e(q)[t], k + K), t < F.length && (F[t] = -1 * k), k += U[t];
-}), nt -= -1 * F[0], E[c] = -1 * F[0] + K, $[c] = E[c] + y - j, T[c] = 0;
+var y = e(at).width();
+if (l <= -1 * E[c]) {
+var _ = -1 * tt[0];
+e(Y).each(function(t) {
+I.setSliderOffset(e(Y)[t], _ + K), t < R.length && (R[t] = -1 * _), _ += W[t];
+}), nt -= -1 * R[0], $[c] = -1 * R[0] + K, C[c] = $[c] + y - N, T[c] = 0;
 } else {
-var _ = 0, B = O.getSliderOffset(e(q[0]), "x");
-e(q).each(function(e) {
-O.getSliderOffset(this, "x") < B && (B = O.getSliderOffset(this, "x"), _ = e);
+var k = 0, L = I.getSliderOffset(e(Y[0]), "x");
+e(Y).each(function(e) {
+I.getSliderOffset(this, "x") < L && (L = I.getSliderOffset(this, "x"), k = e);
 });
-var A = E[c] + y;
-O.setSliderOffset(e(q)[_], A), E[c] = -1 * F[1] + K, $[c] = E[c] + y - j, F.splice(0, 1), 
-F.splice(F.length, 0, -1 * A + K), T[c]++;
+var O = $[c] + y;
+I.setSliderOffset(e(Y)[k], O), $[c] = -1 * R[1] + K, C[c] = $[c] + y - N, R.splice(0, 1), 
+R.splice(R.length, 0, -1 * O + K), T[c]++;
 }
 }
-if (l >= -1 * E[c] || l >= 0) {
+if (l >= -1 * $[c] || l >= 0) {
 var y = e(at).width();
 if (l >= 0) {
-var k = -1 * tt[0];
-for (e(q).each(function(t) {
-O.setSliderOffset(e(q)[t], k + K), t < F.length && (F[t] = -1 * k), k += U[t];
-}), nt += -1 * F[0], E[c] = -1 * F[0] + K, $[c] = E[c] + y - j, T[c] = st; -1 * F[0] - y + K > 0; ) {
-var M = 0, N = O.getSliderOffset(e(q[0]), "x");
-e(q).each(function(e) {
-O.getSliderOffset(this, "x") > N && (N = O.getSliderOffset(this, "x"), M = e);
+var _ = -1 * tt[0];
+for (e(Y).each(function(t) {
+I.setSliderOffset(e(Y)[t], _ + K), t < R.length && (R[t] = -1 * _), _ += W[t];
+}), nt += -1 * R[0], $[c] = -1 * R[0] + K, C[c] = $[c] + y - N, T[c] = st; -1 * R[0] - y + K > 0; ) {
+var A = 0, H = I.getSliderOffset(e(Y[0]), "x");
+e(Y).each(function(e) {
+I.getSliderOffset(this, "x") > H && (H = I.getSliderOffset(this, "x"), A = e);
 });
-var A = E[c] - U[M];
-O.setSliderOffset(e(q)[M], A), F.splice(0, 0, -1 * A + K), F.splice(F.length - 1, 1), 
-E[c] = -1 * F[0] + K, $[c] = E[c] + y - j, T[c]--, S[c]++;
+var O = $[c] - W[A];
+I.setSliderOffset(e(Y)[A], O), R.splice(0, 0, -1 * O + K), R.splice(R.length - 1, 1), 
+$[c] = -1 * R[0] + K, C[c] = $[c] + y - N, T[c]--, S[c]++;
 }
 } else {
-var M = 0, N = O.getSliderOffset(e(q[0]), "x");
-e(q).each(function(e) {
-O.getSliderOffset(this, "x") > N && (N = O.getSliderOffset(this, "x"), M = e);
+var A = 0, H = I.getSliderOffset(e(Y[0]), "x");
+e(Y).each(function(e) {
+I.getSliderOffset(this, "x") > H && (H = I.getSliderOffset(this, "x"), A = e);
 });
-var A = E[c] - U[M];
-O.setSliderOffset(e(q)[M], A), F.splice(0, 0, -1 * A + K), F.splice(F.length - 1, 1), 
-E[c] = -1 * F[0] + K, $[c] = E[c] + y - j, T[c]--;
+var O = $[c] - W[A];
+I.setSliderOffset(e(Y)[A], O), R.splice(0, 0, -1 * O + K), R.splice(R.length - 1, 1), 
+$[c] = -1 * R[0] + K, C[c] = $[c] + y - N, T[c]--;
 }
 }
 } else {
 var y = e(at).width();
-l > -1 * E[c] + K && (i = (E[c] + -1 * (nt - h - eventX + w) * m - h) * f * -1 / m), 
-l < -1 * $[c] && (i = ($[c] + b + -1 * (nt - h - eventX) * m - h) * f * -1 / m);
+l > -1 * $[c] + K && (i = ($[c] + -1 * (nt - h - eventX + w) * m - h) * f * -1 / m), 
+l < -1 * C[c] && (i = (C[c] + b + -1 * (nt - h - eventX) * m - h) * f * -1 / m);
 }
-if (O.setSliderOffset(at, -1 * (nt - h - eventX - i) * m - h + b), g.scrollbar) {
-O.showScrollbar(g, Y), r = Math.floor((nt - eventX - i - E[c] + w) / ($[c] - E[c] + K) * (D - z - H) * m);
-var L = H;
-0 >= r ? (L = H - R - -1 * r, O.setSliderOffset(e("." + Y), 0), e("." + Y).css({
-width:L + "px"
-})) :r >= D - z - R - H ? (L = D - z - R - r, O.setSliderOffset(e("." + Y), r), 
-e("." + Y).css({
-width:L + "px"
-})) :O.setSliderOffset(e("." + Y), r);
+if (I.setSliderOffset(at, -1 * (nt - h - eventX - i) * m - h + b), g.scrollbar) {
+I.showScrollbar(g, Q), r = Math.floor((nt - eventX - i - $[c] + w) / (C[c] - $[c] + K) * (D - z - B) * m);
+var j = B;
+0 >= r ? (j = B - P - -1 * r, I.setSliderOffset(e("." + Q), 0), e("." + Q).css({
+width:j + "px"
+})) :r >= D - z - P - B ? (j = D - z - P - r, I.setSliderOffset(e("." + Q), r), 
+e("." + Q).css({
+width:j + "px"
+})) :I.setSliderOffset(e("." + Q), r);
 }
-"touchmove" == t.type && (P = t.touches[0].pageX);
-var V = !1, W = O.calcActiveOffset(g, -1 * (nt - eventX - i), F, j, T[c], st, void 0, c), J = (W + T[c] + st) % st;
-if (g.infiniteSlider ? J != x[c] && (V = !0) :W != S[c] && (V = !0), V) {
-S[c] = W, x[c] = J, yt = !0;
-var s = new O.args("change", g, at, e(at).children(":eq(" + J + ")"), J, J);
-e(X).data("args", s), "" != g.onSlideChange && g.onSlideChange(s), O.updateBackfaceVisibility(q, c, st, g);
+"touchmove" == t.type && (F = t.touches[0].pageX);
+var q = !1, U = I.calcActiveOffset(g, -1 * (nt - eventX - i), R, N, T[c], st, void 0, c), J = (U + T[c] + st) % st;
+if (g.infiniteSlider ? J != x[c] && (q = !0) :U != S[c] && (q = !0), q) {
+S[c] = U, x[c] = J, yt = !0;
+var s = new I.args("change", g, at, e(at).children(":eq(" + J + ")"), J, J);
+e(X).data("args", s), "" != g.onSlideChange && g.onSlideChange(s), I.updateBackfaceVisibility(Y, c, st, g);
 }
 }
 });
-var Mt = e(window);
-if (d || u) var Mt = e(document);
-e(At).bind("touchcancel.iosSliderEvent touchend.iosSliderEvent", function(e) {
+var At = e(window);
+if (d || u) var At = e(document);
+e(Ot).bind("touchcancel.iosSliderEvent touchend.iosSliderEvent", function(e) {
 var e = e.originalEvent;
-if (Bt) return !1;
-if (Bt = !0, I[c] || gt) return !0;
-if (Ht) return !0;
-if (0 != e.touches.length) for (var t = 0; t < e.touches.length; t++) e.touches[t].pageX == P && O.slowScrollHorizontal(at, q, h, Y, o, n, H, j, D, z, R, tt, F, U, c, W, st, ht, yt, K, g); else O.slowScrollHorizontal(at, q, h, Y, o, n, H, j, D, z, R, tt, F, U, c, W, st, ht, yt, K, g);
-return bt = !1, Ot = !1, !0;
-}), e(Mt).bind("mouseup.iosSliderEvent-" + c, function() {
-if (lt ? ft.unbind("click.disableClick").bind("click.disableClick", O.preventClick) :ft.unbind("click.disableClick").bind("click.disableClick", O.enableClick), 
+if (Lt) return !1;
+if (Lt = !0, M[c] || gt) return !0;
+if (Bt) return !0;
+if (0 != e.touches.length) for (var t = 0; t < e.touches.length; t++) e.touches[t].pageX == F && I.slowScrollHorizontal(at, Y, h, Q, o, n, B, N, D, z, P, tt, R, W, c, U, st, ht, yt, K, g); else I.slowScrollHorizontal(at, Y, h, Q, o, n, B, N, D, z, P, tt, R, W, c, U, st, ht, yt, K, g);
+return bt = !1, It = !1, !0;
+}), e(At).bind("mouseup.iosSliderEvent-" + c, function() {
+if (lt ? ft.unbind("click.disableClick").bind("click.disableClick", I.preventClick) :ft.unbind("click.disableClick").bind("click.disableClick", I.enableClick), 
 wt.each(function() {
 this.onclick = function(t) {
 return lt ? !1 :(e(this).data("onclick") && e(this).data("onclick").call(this, t || window.event), 
@@ -10617,7 +10617,7 @@ void 0);
 var t = e._data(this, "events");
 if (void 0 != t && void 0 != t.click && "iosSliderEvent" != t.click[0].namespace) {
 if (!lt) return !1;
-e(this).one("click.disableClick", O.preventClick);
+e(this).one("click.disableClick", I.preventClick);
 var o = e._data(this, "events").click, n = o.pop();
 o.splice(0, 0, n);
 }
@@ -10625,21 +10625,21 @@ o.splice(0, 0, n);
 var t = e(this).data("events");
 if (void 0 != t && void 0 != t.click && "iosSliderEvent" != t.click[0].namespace) {
 if (!lt) return !1;
-e(this).one("click.disableClick", O.preventClick);
+e(this).one("click.disableClick", I.preventClick);
 var o = e(this).data("events").click, n = o.pop();
 o.splice(0, 0, n);
 }
-}), !k[c]) {
+}), !_[c]) {
 if (gt) return !0;
 if (g.desktopClickDrag && e(at).css({
 cursor:m
 }), g.scrollbarDrag && e(v).css({
 cursor:m
 }), ut = !1, void 0 == dt) return !0;
-O.slowScrollHorizontal(dt, q, h, Y, o, n, H, j, D, z, R, tt, F, U, c, W, st, ht, yt, K, g), 
+I.slowScrollHorizontal(dt, Y, h, Q, o, n, B, N, D, z, P, tt, R, W, c, U, st, ht, yt, K, g), 
 dt = void 0;
 }
-bt = !1, Ot = !1;
+bt = !1, It = !1;
 });
 }
 });
@@ -10648,7 +10648,7 @@ destroy:function(t, o) {
 return void 0 == o && (o = this), e(o).each(function() {
 var o = e(this), n = o.data("iosslider");
 if (void 0 == n) return !1;
-void 0 == t && (t = !0), O.autoSlidePause(n.sliderNumber), k[n.sliderNumber] = !0, 
+void 0 == t && (t = !0), I.autoSlidePause(n.sliderNumber), _[n.sliderNumber] = !0, 
 e(window).unbind(".iosSliderEvent-" + n.sliderNumber), e(document).unbind(".iosSliderEvent-" + n.sliderNumber), 
 e(document).unbind("keydown.iosSliderEvent"), e(this).unbind(".iosSliderEvent"), 
 e(this).children(":first-child").unbind(".iosSliderEvent"), e(this).children(":first-child").children().unbind(".iosSliderEvent"), 
@@ -10657,7 +10657,7 @@ e(this).children(":first-child").attr("style", ""), e(this).children(":first-chi
 e(n.settings.navSlideSelector).attr("style", ""), e(n.settings.navPrevSelector).attr("style", ""), 
 e(n.settings.navNextSelector).attr("style", ""), e(n.settings.autoSlideToggleSelector).attr("style", ""), 
 e(n.settings.unselectableSelector).attr("style", "")), n.settings.scrollbar && e(".scrollbarBlock" + n.sliderNumber).remove();
-for (var i = _[n.sliderNumber], r = 0; r < i.length; r++) clearTimeout(i[r]);
+for (var i = k[n.sliderNumber], r = 0; r < i.length; r++) clearTimeout(i[r]);
 o.removeData("iosslider"), o.removeData("args");
 });
 },
@@ -10665,10 +10665,10 @@ update:function(t) {
 return void 0 == t && (t = this), e(t).each(function() {
 var t = e(this), o = t.data("iosslider");
 if (void 0 == o) return !1;
-o.settings.startAtSlide = t.data("args").currentSlideNumber, B.destroy(!1, this), 
+o.settings.startAtSlide = t.data("args").currentSlideNumber, L.destroy(!1, this), 
 1 != o.numberOfSlides && o.settings.infiniteSlider && (o.settings.startAtSlide = (S[o.sliderNumber] + 1 + T[o.sliderNumber] + o.numberOfSlides) % o.numberOfSlides), 
-B.init(o.settings, this);
-var n = new O.args("update", o.settings, o.scrollerNode, e(o.scrollerNode).children(":eq(" + (o.settings.startAtSlide - 1) + ")"), o.settings.startAtSlide - 1, o.settings.startAtSlide - 1);
+L.init(o.settings, this);
+var n = new I.args("update", o.settings, o.scrollerNode, e(o.scrollerNode).children(":eq(" + (o.settings.startAtSlide - 1) + ")"), o.settings.startAtSlide - 1, o.settings.startAtSlide - 1);
 e(o.stageNode).data("args", n), "" != o.settings.onSliderUpdate && o.settings.onSliderUpdate(n);
 });
 },
@@ -10679,7 +10679,7 @@ return void 0 == i ? !1 :(0 == e(i.scrollerNode).children().length ? (e(i.scroll
 n.data("args").currentSlideNumber = 1) :i.settings.infiniteSlider ? (1 == o ? e(i.scrollerNode).children(":eq(0)").before(t) :e(i.scrollerNode).children(":eq(" + (o - 2) + ")").after(t), 
 T[i.sliderNumber] < -1 && S[i.sliderNumber]--, n.data("args").currentSlideNumber >= o && S[i.sliderNumber]++) :(o <= i.numberOfSlides ? e(i.scrollerNode).children(":eq(" + (o - 1) + ")").before(t) :e(i.scrollerNode).children(":eq(" + (o - 2) + ")").after(t), 
 n.data("args").currentSlideNumber >= o && n.data("args").currentSlideNumber++), 
-n.data("iosslider").numberOfSlides++, B.update(this), void 0);
+n.data("iosslider").numberOfSlides++, L.update(this), void 0);
 });
 },
 removeSlide:function(t) {
@@ -10687,14 +10687,14 @@ return this.each(function() {
 var o = e(this), n = o.data("iosslider");
 return void 0 == n ? !1 :(e(n.scrollerNode).children(":eq(" + (t - 1) + ")").remove(), 
 S[n.sliderNumber] > t - 1 && S[n.sliderNumber]--, o.data("iosslider").numberOfSlides--, 
-B.update(this), void 0);
+L.update(this), void 0);
 });
 },
 goToSlide:function(t, o) {
 return void 0 == o && (o = this), e(o).each(function() {
 var o = e(this), n = o.data("iosslider");
 return void 0 == n || n.shortContent ? !1 :(t = t > n.childrenOffsets.length ? n.childrenOffsets.length - 1 :t - 1, 
-O.changeSlide(t, e(n.scrollerNode), e(n.slideNodes), _[n.sliderNumber], n.scrollbarClass, n.scrollbarWidth, n.stageWidth, n.scrollbarStageWidth, n.scrollMargin, n.scrollBorder, n.originalOffsets, n.childrenOffsets, n.slideNodeOuterWidths, n.sliderNumber, n.infiniteSliderWidth, n.numberOfSlides, n.centeredSlideOffset, n.settings), 
+I.changeSlide(t, e(n.scrollerNode), e(n.slideNodes), k[n.sliderNumber], n.scrollbarClass, n.scrollbarWidth, n.stageWidth, n.scrollbarStageWidth, n.scrollMargin, n.scrollBorder, n.originalOffsets, n.childrenOffsets, n.slideNodeOuterWidths, n.sliderNumber, n.infiniteSliderWidth, n.numberOfSlides, n.centeredSlideOffset, n.settings), 
 void 0);
 });
 },
@@ -10703,7 +10703,7 @@ return this.each(function() {
 var t = e(this), o = t.data("iosslider");
 if (void 0 == o || o.shortContent) return !1;
 var n = (S[o.sliderNumber] + T[o.sliderNumber] + o.numberOfSlides) % o.numberOfSlides;
-(n > 0 || o.settings.infiniteSlider) && O.changeSlide(n - 1, e(o.scrollerNode), e(o.slideNodes), _[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings), 
+(n > 0 || o.settings.infiniteSlider) && I.changeSlide(n - 1, e(o.scrollerNode), e(o.slideNodes), k[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings), 
 S[o.sliderNumber] = n;
 });
 },
@@ -10712,7 +10712,7 @@ return this.each(function() {
 var t = e(this), o = t.data("iosslider");
 if (void 0 == o || o.shortContent) return !1;
 var n = (S[o.sliderNumber] + T[o.sliderNumber] + o.numberOfSlides) % o.numberOfSlides;
-(n < o.childrenOffsets.length - 1 || o.settings.infiniteSlider) && O.changeSlide(n + 1, e(o.scrollerNode), e(o.slideNodes), _[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings), 
+(n < o.childrenOffsets.length - 1 || o.settings.infiniteSlider) && I.changeSlide(n + 1, e(o.scrollerNode), e(o.slideNodes), k[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings), 
 S[o.sliderNumber] = n;
 });
 },
@@ -10720,16 +10720,16 @@ prevPage:function(t) {
 return void 0 == t && (t = this), e(t).each(function() {
 var t = e(this), o = t.data("iosslider");
 if (void 0 == o) return !1;
-var n = O.getSliderOffset(o.scrollerNode, "x") + o.stageWidth;
-O.changeOffset(n, e(o.scrollerNode), e(o.slideNodes), _[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings);
+var n = I.getSliderOffset(o.scrollerNode, "x") + o.stageWidth;
+I.changeOffset(n, e(o.scrollerNode), e(o.slideNodes), k[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings);
 });
 },
 nextPage:function(t) {
 return void 0 == t && (t = this), e(t).each(function() {
 var t = e(this), o = t.data("iosslider");
 if (void 0 == o) return !1;
-var n = O.getSliderOffset(o.scrollerNode, "x") - o.stageWidth;
-O.changeOffset(n, e(o.scrollerNode), e(o.slideNodes), _[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings);
+var n = I.getSliderOffset(o.scrollerNode, "x") - o.stageWidth;
+I.changeOffset(n, e(o.scrollerNode), e(o.slideNodes), k[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings);
 });
 },
 lock:function() {
@@ -10737,7 +10737,7 @@ return this.each(function() {
 var t = e(this), o = t.data("iosslider");
 return void 0 == o || o.shortContent ? !1 :(e(o.scrollerNode).css({
 cursor:"default"
-}), I[o.sliderNumber] = !0, void 0);
+}), M[o.sliderNumber] = !0, void 0);
 });
 },
 unlock:function() {
@@ -10745,7 +10745,7 @@ return this.each(function() {
 var t = e(this), o = t.data("iosslider");
 return void 0 == o || o.shortContent ? !1 :(e(o.scrollerNode).css({
 cursor:m
-}), I[o.sliderNumber] = !1, void 0);
+}), M[o.sliderNumber] = !1, void 0);
 });
 },
 getData:function() {
@@ -10757,20 +10757,20 @@ return void 0 == o || o.shortContent ? !1 :o;
 autoSlidePause:function() {
 return this.each(function() {
 var t = e(this), o = t.data("iosslider");
-return void 0 == o || o.shortContent ? !1 :(y[o.sliderNumber].autoSlide = !1, O.autoSlidePause(o.sliderNumber), 
+return void 0 == o || o.shortContent ? !1 :(y[o.sliderNumber].autoSlide = !1, I.autoSlidePause(o.sliderNumber), 
 o);
 });
 },
 autoSlidePlay:function() {
 return this.each(function() {
 var t = e(this), o = t.data("iosslider");
-return void 0 == o || o.shortContent ? !1 :(y[o.sliderNumber].autoSlide = !0, O.autoSlide(e(o.scrollerNode), e(o.slideNodes), _[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings), 
+return void 0 == o || o.shortContent ? !1 :(y[o.sliderNumber].autoSlide = !0, I.autoSlide(e(o.scrollerNode), e(o.slideNodes), k[o.sliderNumber], o.scrollbarClass, o.scrollbarWidth, o.stageWidth, o.scrollbarStageWidth, o.scrollMargin, o.scrollBorder, o.originalOffsets, o.childrenOffsets, o.slideNodeOuterWidths, o.sliderNumber, o.infiniteSliderWidth, o.numberOfSlides, o.centeredSlideOffset, o.settings), 
 o);
 });
 }
 };
 e.fn.iosSlider = function(t) {
-return B[t] ? B[t].apply(this, Array.prototype.slice.call(arguments, 1)) :"object" != typeof t && t ? (e.error("invalid method call!"), 
-void 0) :B.init.apply(this, arguments);
+return L[t] ? L[t].apply(this, Array.prototype.slice.call(arguments, 1)) :"object" != typeof t && t ? (e.error("invalid method call!"), 
+void 0) :L.init.apply(this, arguments);
 };
 }(jQuery);
