@@ -10,7 +10,7 @@ image:$S.page_meta.social_media_config.image,
 description:$S.page_meta.social_media_config.description
 }), window.social_media_config = t, window.slide_navigator = new Bobcat.Navigator(), 
 $B.isStatic() ? window.edit_page = new Bobcat.ShowPage({}) :(window.edit_page = new Bobcat.ShowPage(data), 
-window.pageTranformers = new Bobcat.PageTransformer($("body"), !1), window.pageTranformers.transform()), 
+window.pageTransformers = new Bobcat.PageTransformer($("body"), !1), window.pageTransformers.transform()), 
 e = {
 page_id:$S.page_meta.id,
 user_id:$S.page_meta.user.id,
